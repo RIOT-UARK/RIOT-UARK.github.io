@@ -1,0 +1,718 @@
+@charset "UTF-8";
+
+:root {
+	--white: white;
+	--navy: #1B3C6D;
+	--grey: grey;
+	--inverse: black;
+	--lightGrey: #ccc;
+	--navHover: #282828;
+	--lightShadow: 0 4px 8px 2px rgba(27, 60, 109, 0.3);
+	--heavyShadow: 0 4px 8px 0 rgba(27, 60, 109, 0.5);
+}
+
+*.darkMode {
+	background-color: rgb(10, 0, 17);
+	color: whitesmoke;
+	--inverse: whitesmoke;
+	--grey: black;
+	--lightGrey: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--white);
+	font-family: 'Roboto', sans-serif;
+	padding-top: 20px;
+	margin: 0;
+}
+
+h1 {
+	color: var(--navy);
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+	color: var(--navy);
+	font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+	color: var(--grey);
+}
+
+h5 {
+	color: var(--grey);
+	font-family: 'Roboto', sans-serif;
+}
+
+p {
+	font-size: 20px;
+}
+
+li {
+	font-size: 20px;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+.textBlurb {
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+.page {
+	padding-bottom: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+footer {
+	background-color: var(--navy);
+	color: var(--white);
+	padding-top: 15px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.socialMediaContainer {
+	width: 325px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: center;
+}
+
+.socialMediaLink {
+	column-gap: 5px;
+}
+
+.socialMediaText {
+	width: 100px;
+	font-size: 16px;
+	color: var(--white);
+	text-decoration: none;
+	margin: 0;
+}
+
+.logoBanner {
+	background-color: var(--navy);
+	padding-top: 50px;
+	padding-bottom: 10px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.logoBanner h1 {
+	color: var(--white)
+}
+
+#bannerLogo {
+	width: 200px;
+}
+
+#DiscordWidget {
+	float: right;
+}
+
+#AboutUs {
+	width: calc(100% - 374.73px);
+}
+
+.sponsor {
+	color: var(--inverse);
+}
+
+#RIOTlogo {
+	-webkit-transition: -webkit-transform .4s ease-in-out;
+	transition: transform .4s ease-in-out;
+}
+
+#SignUp {
+	background-color: var(--navy);
+	color: var(--white);
+	text-decoration: none;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: center;
+	width: 225px;
+	height: 50px;
+	resize: horizontal;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+
+#SignUp:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#SignUpUnavailable {
+	background-color: var(--grey);
+	color: var(--white);
+	text-decoration: none;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	float: center;
+	width: 300px;
+	height: 50px;
+	resize: horizontal;
+	border-radius: 10px;
+}
+
+#DonateButton {
+	background-color: var(--navy);
+	color: var(--white);
+	text-decoration: none;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: center;
+	width: 450px;
+	height: 50px;
+	resize: horizontal;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+
+#DonateButton:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+/*--------------------------------------*/
+/*------------Image Carousel------------*/
+/*--------------------------------------*/
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.Containers {
+	display: none;
+}
+
+.slick-prev, .slick-next {
+	background-color: purple;
+	color: yellow;
+}
+
+#carouselContent {
+	background-color: var(--navy);
+	color: var(--white);
+	text-align: center;
+}
+
+#carouselDots {
+	text-align: center;
+}
+
+.Back,
+.forward {
+	cursor: pointer;
+	position: absolute;
+	top: 48%;
+	width: auto;
+	margin-top: -23px;
+	padding: 17px;
+	color: var(--white);
+	font-weight: bold;
+	font-size: 19px;
+	transition: 0.4s ease;
+	border-radius: 0 5px 5px 0;
+	user-select: none;
+	background-color: var(--navy);
+}
+
+.forward {
+	right: 0;
+	border-radius: 4px 0 0 4px;
+}
+
+.Info {
+	color: var(--white);
+	font-size: 16px;
+	padding: 10px 14px;
+	position: relative;
+	height: 200px;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	background-color: var(--navy);
+}
+
+.dots {
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	margin: 0 3px;
+	background-color: var(--lightGrey);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.5s ease;
+}
+
+.enable,
+.dots:hover {
+	background-color: var(--navy);
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.4s;
+	animation-name: fade;
+	animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: .5
+	}
+
+	to {
+		opacity: 2
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: .5
+	}
+
+	to {
+		opacity: 2
+	}
+}
+
+
+
+/*---------------------------------------*/
+/*----------------NAVBAR-----------------*/
+/*---------------------------------------*/
+nav {
+	background-color: black;
+	text-align: left;
+	font-size: 16px;
+	position: fixed;
+	z-index: 1100;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+nav a {
+	color: var(--white);
+	display: inline-block;
+	padding: 20px;
+}
+
+nav a:hover {
+	background-color: var(--navHover);
+}
+
+#darkMode {
+	color: lightGrey;
+	background-color: rgb(33, 0, 52);
+	float: right;
+	cursor: pointer;
+	margin-top: 13px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: solid lightGrey 2px;
+	border-radius: 20px;
+}
+
+#darkModeIcon {
+	margin-left: 6px;
+}
+
+
+
+/*---------------------------------------*/
+/*-------------Project Cards-------------*/
+/*---------------------------------------*/
+.projectCard {
+	margin: 5px;
+	border: 1px solid var(--lightGrey);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: var(--lightShadow);
+	width: 301.6px;
+	float: left;
+}
+
+.projectCardContainer {
+	display: grid;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+div.gallery {
+	margin: 5px;
+	border: 1px solid var(--lightGrey);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	width: 301.6px;
+	float: left;
+}
+
+div.gallery img {
+	width: 300px;
+	height: 200px;
+}
+
+div.desc {
+	text-align: center;
+}
+
+.projectImage {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	transition: 0.3s;
+	width: 300px;
+	height: 200px;
+}
+
+.projectCard:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.moda {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.moda-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: var(--lightGrey);
+	padding: 10px 0;
+	height: 150px;
+}
+
+/* Add Animation */
+.moda-content,
+#caption {
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+	from {
+		transform: scale(0.1)
+	}
+
+	to {
+		transform: scale(1)
+	}
+}
+
+
+
+/*---------------------------------------*/
+/*----------MEET THE TEAM CARDS----------*/
+/*---------------------------------------*/
+.container {
+	padding: 0 16px;
+}
+
+.leaderCardInfo {
+	padding: 0 16px;
+	float: left;
+	text-align: center;
+}
+
+.leaderCardDesc {
+	padding-left: 16px;
+	text-align: left;
+	display: inline-block;
+}
+
+#leadership,
+#teamLeads,
+#otherMembers {
+	padding-bottom: 75px;
+}
+
+.cardTitle {
+	color: var(--navy);
+	font-size: 18px;
+}
+
+.leaderDesc {
+	margin: 0;
+}
+
+.leaderCard {
+	box-shadow: var(--heavyShadow);
+	width: 600px;
+	height: 475px;
+	margin: 3%;
+	padding: 20px 20px 0px 20px;
+	columns: 236px 2;
+}
+
+.leaderCardContainer {
+	display: grid;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.leaderPortrait {
+	width: 260px;
+	height: 300px;
+}
+
+/*Team lead cards*/
+.teamLeadCard {
+	box-shadow: var(--heavyShadow);
+	width: 300px;
+	height: 160px;
+	margin: 3%;
+	text-align: center;
+	padding: 10px 20px 0px 20px;
+}
+
+.teamLeadCardContainer {
+	display: grid;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+/*Member cards*/
+.memberCard {
+	box-shadow: var(--lightShadow);
+	width: 300px;
+	height: 100px;
+	margin: 3%;
+	text-align: center;
+	padding: 5px 20px 0px 20px;
+}
+
+.memberCardContainer {
+	display: grid;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+
+
+/*---------------------------------------*/
+/*------------BATTLEBOT CARDS------------*/
+/*---------------------------------------*/
+.battlebotCard {
+	box-shadow: var(--lightShadow);
+	width: 300px;
+	height: 125px;
+	padding: 5px 20px 0px 20px;
+	margin: 3%;
+	text-align: center;
+}
+
+.battlebotCardContainer {
+	display: grid;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.battlebotSeasonCard {
+	box-shadow: var(--lightShadow);
+	width: 150px;
+	height: 100px;
+	float: center;
+	margin: 3%;
+	text-align: center;
+	padding: 10px 40px 0px 40px;
+}
+
+.battlebotSeasonCardContainer {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	justify-content: space-evenly;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+#prevSemesters {
+	padding-bottom: 100px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+
+
+/*---------------------------------------*/
+/*-------------MEDIA QUERIES-------------*/
+/*---------------------------------------*/
+@media only screen and (min-width: 1800px) {
+	.leaderCardContainer {
+		grid-template-columns: auto auto auto;
+	}
+	#President							{grid-area: 1/1/1/1;}
+	#VicePresident						{grid-area: 1/2/1/2;}
+	#Treasurer							{grid-area: 1/3/1/3;}
+	#CurriculumPlanner					{grid-area: 2/1/2/1;}
+	#InternalCommunicationsCoordinator  {grid-area: 2/2/2/2;}
+	#ExternalCommunicationsCoordinator  {grid-area: 2/3/2/3;}
+}
+
+@media only screen and (min-width: 1200px) {
+	.projectCardContainer,
+	.teamLeadCardContainer,
+	.memberCardContainer,
+	.battlebotCardContainer {
+		grid-template-columns: auto auto auto auto;
+	}
+	.leaderCardContainer {
+		grid-template-columns: auto auto;
+	}
+	#President							{grid-area: 1/1/1/1;}
+	#VicePresident						{grid-area: 1/2/1/2;}
+	#Treasurer							{grid-area: 2/1/2/1;}
+	#CurriculumPlanner					{grid-area: 2/2/2/2;}
+	#InternalCommunicationsCoordinator  {grid-area: 3/1/3/1;}
+	#ExternalCommunicationsCoordinator  {grid-area: 3/2/3/2;}
+}
+@media only screen and (max-width: 1200px) {
+	.projectCardContainer,
+	.teamLeadCardContainer,
+	.memberCardContainer,
+	.battlebotCardContainer {
+		grid-template-columns: auto auto auto;
+	}
+	.leaderCardContainer {
+		grid-template-columns: auto;
+	}
+	#prevSemesters {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	#President							{grid-area: 1/1/1/1;}
+	#VicePresident						{grid-area: 2/1/2/1;}
+	#Treasurer							{grid-area: 3/1/3/1;}
+	#CurriculumPlanner					{grid-area: 4/1/4/1;}
+	#InternalCommunicationsCoordinator  {grid-area: 5/1/5/1;}
+	#ExternalCommunicationsCoordinator  {grid-area: 6/1/6/1;}
+}
+@media only screen and (max-width: 1050px) {
+	#AboutUs {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 900px) {
+	.projectCardContainer,
+	.teamLeadCardContainer,
+	.memberCardContainer,
+	.battlebotCardContainer {
+		grid-template-columns: auto auto;
+	}
+}
+@media only screen and (max-width: 800px) {
+	#prevSemesters {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.moda-content {
+		width: 100%;
+	}
+	.battlebotSeasonCardContainer {
+		grid-template-columns: auto auto;
+	}
+	#prevSemesters {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.projectCardContainer,
+	.teamLeadCardContainer,
+	.memberCardContainer,
+	.battlebotCardContainer {
+		grid-template-columns: auto;
+	}
+	#prevSemesters {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.battlebotSeasonCardContainer {
+		grid-template-columns: auto;
+	}
+	#prevSemesters {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+}
+
+.clipping-container {
+	position: relative;
+	border: 1px solid #aaa;
+	margin-bottom: 12px;
+	padding: 12px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.modal {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+	background-color: var(--white);
+	border: 2px solid var(--white);
+	border-radius: 12px;
+	position: fixed;
+	--modalWidth: 80%;
+	width: var(--modalWidth);
+	top: 70px;
+	bottom: 70px;
+	left: calc(50% - var(--modalWidth) / 2);
+}
