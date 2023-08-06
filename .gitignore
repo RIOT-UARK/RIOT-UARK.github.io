@@ -1,0 +1,26 @@
+# Dependency directories
+node_modules/
+.pnpm/
+.yarn/
+
+# Package lock files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build and log files
+build/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
