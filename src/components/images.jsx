@@ -1,0 +1,22 @@
+const images = [
+    {
+        id: 1,
+        src: 'Projects/R2-D2.jpg',
+        alt: 'R2-D2',
+        projectDesc:
+            'Spearheaded as our internal advertisement robot, this robot is a 1:1 scale recreation of the iconic blue trashcan robot from Star Wars. It’s an ongoing project in development under the supervision of Grace Harding, our Fall of 2023 Vice President, and members Andrew Files and Ben Fletcher. This project started two semesters ago when Grace and Andrew were freshmen in the first-year engineering program and when Ben was a junior and is a testament to the design capabilities that our club trains.',
+    },
+    {
+        id: 2,
+        src: 'Projects/Lily.png',
+        alt: 'Lily',
+        projectDesc: 'Lily',
+    },
+    {
+        id: 3,
+        src: 'Projects/IEEE Drone Bot.jpg',
+        alt: 'IEEE Drone Bot',
+        projectDesc: 'IEEE Drone Bot',
+    },
+];
+export default images;
