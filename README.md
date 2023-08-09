@@ -6,12 +6,7 @@ This is a repository for the **official** Robotics Interdiciplanary Organization
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Testing](#testing)
-- [Building for Production](#building-for-production)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Running the Website for Development](#running-the-website-for-development)
 
 ## Getting Started
 
