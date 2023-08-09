@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const ProjectCarousel = ({ images }) => {
-
     const sliderRef = useRef(null);
 
     const settings = {
