@@ -7,7 +7,7 @@ const RootLayout = () => {
                 <ResponsiveNavBar />
             </header>
             <main>
-                <Outlet />
+                <Outlet /> {/* This is where the page content will be rendered! */}
             </main>
         </>
     );
