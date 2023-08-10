@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 :root {
-    --white: white;
-    --navy: #1b3c6d;
+    --background-color: whitesmoke;
+    --white: #ecf3fe;
+    --navy: #1c3d6e;
     --grey: grey;
     --inverse: black;
     --lightGrey: #ccc;
@@ -11,20 +12,25 @@
     --heavyShadow: 0 4px 8px 0 rgba(27, 60, 109, 0.5);
 }
 
-*.darkMode {
-    background-color: rgb(10, 0, 17);
+[data-theme='dark'] {
+    --background-color: rgb(10, 0, 17);
     color: whitesmoke;
-    --inverse: whitesmoke;
-    --grey: black;
-    --lightGrey: black;
+    --navy: #3e5a8c;
+    --grey: #b0b0b0;
+    --inverse: #e5e5e5;
+    --lightGrey: #7a7a7a;
+    --navHover: #333333;
 }
 
 * {
     box-sizing: border-box;
+    transition:
+        background-color 0.2s,
+        color 0.3s;
 }
 
 body {
-    background-color: var(--white);
+    background-color: var(--background-color);
     font-family: 'Roboto', sans-serif;
     padding-top: 20px;
     margin: 0;
@@ -124,6 +130,12 @@ footer {
 
 #AboutUs {
     width: calc(100% - 374.73px);
+    min-height: 500px;
+}
+
+#Projects {
+    margin-top: 100px;
+
 }
 
 .sponsor {
@@ -146,7 +158,8 @@ footer {
     padding-right: 20px;
     float: center;
     width: 225px;
-    height: 50px;
+    height: auto;
+
     resize: horizontal;
     border-radius: 10px;
     transition: all 0.5s;
@@ -167,7 +180,7 @@ footer {
     padding-bottom: 10px;
     float: center;
     width: 300px;
-    height: 50px;
+    height: auto;
     resize: horizontal;
     border-radius: 10px;
 }
@@ -207,30 +220,34 @@ footer {
     display: none;
 }
 
-#carouselContent {
+.innerSlide {
     background-color: var(--navy);
     color: var(--white);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
-
 #carouselContent img {
+    max-height: 450px;
     height: 100%;
     width: 100%;
     object-fit: contain;
     margin-top: 10px;
+    padding: 25px;
 }
-
-#carouselIMG {
-    width: 1000px;
-    height: 500px;
-}
-
-#carouselDots {
+#carouselContent p {
+    font-size: 20px;
+    margin: 0;
+    padding: 15px;
     text-align: center;
-}
-
-#carousel-container {
-    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #carousel-button {
@@ -251,16 +268,20 @@ footer {
 #carousel-button:nth-child(1) {
     left: -50px;
 }
+#carousel-button:nth-child(1):hover {
+    transform: translate(-5px, -50%) scale(1.1);
+}
 
 /* Specific to right arrow */
 #carousel-button:nth-child(3) {
     right: -50px;
 }
 
-#imgslider {
-    /* You may need some width definition here if not occupying the full width */
-    width: 100%;
+#carousel-button:nth-child(3):hover {
+    transform: translate(5px, -50%) scale(1.1);
 }
+
+
 
 .Back,
 .forward {
@@ -365,8 +386,14 @@ nav a:hover {
 }
 
 #darkMode {
-    color: lightGrey;
-    background-color: rgb(33, 0, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    color: var(--white);
+    background-color: var(--navy);
+
     float: right;
     cursor: pointer;
     margin-top: 13px;
@@ -375,7 +402,7 @@ nav a:hover {
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: solid lightGrey 2px;
+    border: solid var(--white);
     border-radius: 20px;
 }
 
@@ -736,6 +763,11 @@ div.desc {
         margin-left: 20%;
         margin-right: 20%;
     }
+    #carouselIMG {
+        max-width: 100%;
+        height: auto;
+    }
+
 }
 @media only screen and (max-width: 600px) {
     .projectCardContainer,
@@ -748,10 +780,7 @@ div.desc {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #carouselIMG {
-        max-width: 100%;
-        height: auto;
-    }
+
 }
 @media only screen and (max-width: 400px) {
     .battlebotSeasonCardContainer {

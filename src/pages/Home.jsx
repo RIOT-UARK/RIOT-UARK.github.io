@@ -72,10 +72,10 @@ const Home = () => {
                     eu sollicitudin massa ligula at erat. Mauris eget dictum
                     nisi. Maecenas neque leo, lacinia at libero eget,
                     condimentum posuere mi. Pellentesque tellus nisi, posuere
-                    quis commodo eget, congue sit amet tortor.{' '}
+                    quis commodo eget, congue sit amet tortor.
                 </p>
                 <p>
-                    {' '}
+
                     Donec nec ornare orci, viverra facilisis purus. Donec
                     posuere faucibus risus quis consequat. Praesent pretium,
                     risus vel imperdiet imperdiet, quam magna feugiat mi, in
@@ -89,8 +89,20 @@ const Home = () => {
                     magna. In ante metus, consequat at libero vel, dignissim
                     iaculis nisl.
                 </p>
+                <p>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae; Vivamus vitae libero
+                    scelerisque, luctus nisl sed, tincidunt odio. Nulla
+                    facilisi. Nullam auctor, nunc id ultrices consequat, dolor
+                    nisl luctus lorem, sed luctus lectus elit at elit. Nullam
+                    eget purus euismod, luctus nunc sit amet, ultricies odio.
+                    Nullam auctor, nunc id ultrices consequat, dolor nisl luctus
+                    lorem, sed luctus lectus elit at elit. Nullam eget purus
+                    euismod, luctus nunc sit amet, ultricies odio.
+                </p>
             </div>
-            <div>
+            <center id="Projects">
+
                 <h1>Projects</h1>
                 {fetchError && <p>{fetchError}</p>}
                 {Projects && (
@@ -98,7 +110,8 @@ const Home = () => {
                         <ProjectCarousel images={images} />
                     </div>
                 )}
-            </div>
+            </center>
+
             <div>
                 <center>
                     <h1>Sponsorship</h1>
