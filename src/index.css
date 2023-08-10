@@ -385,6 +385,8 @@ nav a:hover {
     background-color: var(--navHover);
 }
 
+
+
 #darkMode {
     display: flex;
     justify-content: center;
@@ -413,23 +415,30 @@ nav a:hover {
 /*---------------------------------------*/
 /*----------------MOBILE NAVBAR----------*/
 /*---------------------------------------*/
+
+.MobileDarkModeButton {
+    cursor: pointer; 
+    margin-right: 64px;
+}
+
 .navbar-spacer {
     height: 60px;
 }
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: black;
     position: fixed;
     z-index: 1100;
     top: 0;
     width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
     height: 80px;
 }
 
 .menu-bars {
-    margin-left: 2rem;
+    display: inline-block;
+    margin-left: 32px;
     font-size: 2rem;
     background: none;
 }
