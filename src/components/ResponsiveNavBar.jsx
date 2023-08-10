@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 
 
 const ResponsiveNavBar = () => {
-    const [isMobile, setIsMobile] = useState(true);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
     useEffect(() => {
     const handleResize = () => {
