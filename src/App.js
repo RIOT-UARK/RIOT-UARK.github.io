@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import DarkMode from './components/darkMode';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ResponsiveNavBar from './components/ResponsiveNavBar';
+
 
 // pages
 import Home from './pages/Home';
@@ -12,18 +13,11 @@ import Donate from './pages/Donate';
 import Placeholder from './pages/Placeholder';
 import PageNotFound from './pages/PageNotFound';
 
+
 function App() {
     return (
         <BrowserRouter>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/Microbots">Microbots</Link>
-                <Link to="/Projects">Projects</Link>
-                <Link to="/MeetTheTeam">Meet the Team</Link>
-                <Link to="/Donate">Donate</Link>
-                <Link to="/GettingStarted">Getting Started</Link>
-                <DarkMode />
-            </nav>
+            <ResponsiveNavBar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Microbots" element={<Microbots />} />
