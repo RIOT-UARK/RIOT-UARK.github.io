@@ -6,7 +6,7 @@ import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import MobileDarkMode from './MobileDarkMode';
 
-function MobileNavBar() {
+const MobileNavBar = () => {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);

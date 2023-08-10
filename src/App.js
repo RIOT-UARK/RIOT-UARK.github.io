@@ -18,7 +18,8 @@ function App() {
     return (
         <BrowserRouter>
             <ResponsiveNavBar />
-            <Routes>
+            <main>
+                <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Microbots" element={<Microbots />} />
                 <Route path="/Projects" element={<Projects />} />
@@ -29,6 +30,8 @@ function App() {
                 <Route path="/Placeholder" element={<Placeholder />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
+            </main>
+            
         </BrowserRouter>
     );
 }

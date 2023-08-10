@@ -2,7 +2,7 @@ import React from 'react';
 import DarkModeToggle from './darkMode';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+const NavBar = () => {
     return (
         <nav>
             <Link to="/">Home</Link>

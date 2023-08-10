@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
-function MobileDarkMode() {
+const MobileDarkMode = () => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {

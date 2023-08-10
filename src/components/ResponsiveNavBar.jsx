@@ -3,7 +3,7 @@ import MobileNavBar from "./MobileNavBar";
 import NavBar from "./NavBar";
 
 
-function ResponsiveNavBar() {
+const ResponsiveNavBar = () => {
     const [isMobile, setIsMobile] = useState(true);
 
     useEffect(() => {
