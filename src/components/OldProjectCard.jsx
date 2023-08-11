@@ -4,11 +4,7 @@ const ProjectCard = ({ project }) => {
             return (
                 <div className="projectCard">
                     <div className="myBtn">
-                        <img
-                            className="projectImage"
-                            src="RIOT Logo Transparent.png"
-                            alt="Placeholder"
-                        ></img>
+                        <img className="projectImage" src="RIOT Logo Transparent.png" alt="Placeholder"></img>
                         <div className="desc">
                             <p>{project.name}</p>
                             <h5>{project.yearStarted}</h5>
@@ -20,11 +16,7 @@ const ProjectCard = ({ project }) => {
             return (
                 <div className="projectCard">
                     <div className="myBtn">
-                        <img
-                            className="projectImage"
-                            src="RIOT Logo.png"
-                            alt="Placeholder"
-                        ></img>
+                        <img className="projectImage" src="RIOT Logo.png" alt="Placeholder"></img>
                         <div className="desc">
                             <p>{project.name}</p>
                             <h5>

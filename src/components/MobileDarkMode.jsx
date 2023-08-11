@@ -22,13 +22,10 @@ const MobileDarkMode = () => {
     }, [darkMode]);
 
     return (
-        <div
-            className="MobileDarkModeButton"
-            onClick={() => setDarkMode(!darkMode)}
-        >
+        <div className="MobileDarkModeButton" onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? <FaSun size={30} /> : <FaMoon size={30} />}
         </div>
     );
-}
+};
 
 export default MobileDarkMode;

@@ -135,7 +135,6 @@ footer {
 
 #Projects {
     margin-top: 100px;
-
 }
 
 .sponsor {
@@ -281,8 +280,6 @@ footer {
     transform: translate(5px, -50%) scale(1.1);
 }
 
-
-
 .Back,
 .forward {
     cursor: pointer;
@@ -385,8 +382,6 @@ nav a:hover {
     background-color: var(--navHover);
 }
 
-
-
 #darkMode {
     display: flex;
     justify-content: center;
@@ -417,7 +412,7 @@ nav a:hover {
 /*---------------------------------------*/
 
 .MobileDarkModeButton {
-    cursor: pointer; 
+    cursor: pointer;
     margin-right: 64px;
 }
 
@@ -499,10 +494,6 @@ nav a:hover {
 .nav-title {
     margin-left: 16px;
 }
-
-
-
-
 
 /*---------------------------------------*/
 /*-------------Project Cards-------------*/
@@ -861,7 +852,6 @@ div.desc {
         max-width: 100%;
         height: auto;
     }
-
 }
 @media only screen and (max-width: 600px) {
     .projectCardContainer,
@@ -874,7 +864,6 @@ div.desc {
         margin-left: 10%;
         margin-right: 10%;
     }
-
 }
 @media only screen and (max-width: 400px) {
     .battlebotSeasonCardContainer {

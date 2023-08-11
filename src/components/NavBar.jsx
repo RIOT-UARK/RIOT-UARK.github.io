@@ -14,5 +14,5 @@ const NavBar = () => {
             <DarkModeToggle />
         </nav>
     );
-}
+};
 export default NavBar;

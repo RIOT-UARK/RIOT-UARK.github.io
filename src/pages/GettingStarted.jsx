@@ -5,11 +5,7 @@ const GettingStarted = () => {
                 <h1>Getting Started</h1>
                 <ol>
                     <li>
-                        <a
-                            href="https://discord.gg/5YRM3pQYev"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="https://discord.gg/5YRM3pQYev" target="_blank" rel="noreferrer">
                             Join the Discord
                         </a>
                     </li>

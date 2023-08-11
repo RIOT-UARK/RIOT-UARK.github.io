@@ -51,58 +51,40 @@ const Home = () => {
             <div id="AboutUs">
                 <h1>About Us</h1>
                 <p>
-                    RIOT is an engineering Registered Student Organization, soon
-                    to be nonprofit organization, that seeks to benefit
-                    mechatronics through robotics at the scale of campus and our
-                    larger community and make Northwest Arkansas the Robotics
-                    and Mechatronics capital of the nation.{' '}
+                    RIOT is an engineering Registered Student Organization, soon to be nonprofit organization, that
+                    seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
+                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin gravida cursus mi, eu faucibus erat mollis et. Nunc
-                    fermentum, velit eget vestibulum euismod, massa velit cursus
-                    justo, et vestibulum elit metus eget ipsum. Vivamus
-                    sollicitudin purus id dui congue, at tempus orci fermentum.
-                    Vestibulum interdum commodo nunc, id dictum lacus
-                    pellentesque ut. Nam et mauris ut risus pellentesque posuere
-                    eu quis urna. Donec a ligula a urna malesuada scelerisque.
-                    Cras hendrerit mattis diam, ac tristique ante interdum quis.
-                    Aenean lacinia sollicitudin ex. Suspendisse potenti. Vivamus
-                    ullamcorper, lacus id blandit varius, arcu ex egestas eros,
-                    eu sollicitudin massa ligula at erat. Mauris eget dictum
-                    nisi. Maecenas neque leo, lacinia at libero eget,
-                    condimentum posuere mi. Pellentesque tellus nisi, posuere
-                    quis commodo eget, congue sit amet tortor.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida cursus mi, eu faucibus erat
+                    mollis et. Nunc fermentum, velit eget vestibulum euismod, massa velit cursus justo, et vestibulum
+                    elit metus eget ipsum. Vivamus sollicitudin purus id dui congue, at tempus orci fermentum.
+                    Vestibulum interdum commodo nunc, id dictum lacus pellentesque ut. Nam et mauris ut risus
+                    pellentesque posuere eu quis urna. Donec a ligula a urna malesuada scelerisque. Cras hendrerit
+                    mattis diam, ac tristique ante interdum quis. Aenean lacinia sollicitudin ex. Suspendisse potenti.
+                    Vivamus ullamcorper, lacus id blandit varius, arcu ex egestas eros, eu sollicitudin massa ligula at
+                    erat. Mauris eget dictum nisi. Maecenas neque leo, lacinia at libero eget, condimentum posuere mi.
+                    Pellentesque tellus nisi, posuere quis commodo eget, congue sit amet tortor.
                 </p>
                 <p>
-
-                    Donec nec ornare orci, viverra facilisis purus. Donec
-                    posuere faucibus risus quis consequat. Praesent pretium,
-                    risus vel imperdiet imperdiet, quam magna feugiat mi, in
-                    facilisis arcu ante a nisi. Cras nunc nisi, consequat at
-                    malesuada vel, lobortis ornare leo. Integer at dolor neque.
-                    Vestibulum a vehicula tortor, porttitor dictum nisi. Nunc at
-                    sapien tempus, ultrices sem non, vestibulum nisi. Ut
-                    tristique mollis sapien, ut laoreet nunc sagittis ut. Mauris
-                    hendrerit, libero nec faucibus sagittis, velit metus iaculis
-                    augue, id porttitor dui enim dictum velit. Duis eget eros
-                    magna. In ante metus, consequat at libero vel, dignissim
-                    iaculis nisl.
+                    Donec nec ornare orci, viverra facilisis purus. Donec posuere faucibus risus quis consequat.
+                    Praesent pretium, risus vel imperdiet imperdiet, quam magna feugiat mi, in facilisis arcu ante a
+                    nisi. Cras nunc nisi, consequat at malesuada vel, lobortis ornare leo. Integer at dolor neque.
+                    Vestibulum a vehicula tortor, porttitor dictum nisi. Nunc at sapien tempus, ultrices sem non,
+                    vestibulum nisi. Ut tristique mollis sapien, ut laoreet nunc sagittis ut. Mauris hendrerit, libero
+                    nec faucibus sagittis, velit metus iaculis augue, id porttitor dui enim dictum velit. Duis eget eros
+                    magna. In ante metus, consequat at libero vel, dignissim iaculis nisl.
                 </p>
                 <p>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et
-                    ultrices posuere cubilia curae; Vivamus vitae libero
-                    scelerisque, luctus nisl sed, tincidunt odio. Nulla
-                    facilisi. Nullam auctor, nunc id ultrices consequat, dolor
-                    nisl luctus lorem, sed luctus lectus elit at elit. Nullam
-                    eget purus euismod, luctus nunc sit amet, ultricies odio.
-                    Nullam auctor, nunc id ultrices consequat, dolor nisl luctus
-                    lorem, sed luctus lectus elit at elit. Nullam eget purus
-                    euismod, luctus nunc sit amet, ultricies odio.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus
+                    vitae libero scelerisque, luctus nisl sed, tincidunt odio. Nulla facilisi. Nullam auctor, nunc id
+                    ultrices consequat, dolor nisl luctus lorem, sed luctus lectus elit at elit. Nullam eget purus
+                    euismod, luctus nunc sit amet, ultricies odio. Nullam auctor, nunc id ultrices consequat, dolor nisl
+                    luctus lorem, sed luctus lectus elit at elit. Nullam eget purus euismod, luctus nunc sit amet,
+                    ultricies odio.
                 </p>
             </div>
             <center id="Projects">
-
                 <h1>Projects</h1>
                 {fetchError && <p>{fetchError}</p>}
                 {Projects && (

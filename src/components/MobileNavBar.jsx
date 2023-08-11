@@ -32,9 +32,7 @@ const MobileNavBar = () => {
                             return (
                                 <li key={index} className={item.cName}>
                                     <Link to={item.path}>
-                                        <span className="nav-title">
-                                            {item.title}
-                                        </span>
+                                        <span className="nav-title">{item.title}</span>
                                     </Link>
                                 </li>
                             );
@@ -44,6 +42,6 @@ const MobileNavBar = () => {
             </IconContext.Provider>
         </>
     );
-}
+};
 
 export default MobileNavBar;
