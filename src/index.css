@@ -24,9 +24,7 @@
 
 * {
     box-sizing: border-box;
-    transition:
-        background-color 0.2s,
-        color 0.3s;
+    transition: background-color 0.2s;
 }
 
 body {
@@ -204,6 +202,12 @@ footer {
     box-shadow:
         0 12px 16px 0 rgba(0, 0, 0, 0.24),
         0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.default-img {
+    height: auto;
+    max-width: 800px;
+    width: 100%;
 }
 
 /*--------------------------------------*/
@@ -635,16 +639,14 @@ div.desc {
     box-shadow: var(--heavyShadow);
     width: 600px;
     height: 475px;
-    margin: 3%;
     padding: 20px 20px 0px 20px;
+    margin-top: 20px;
     columns: 236px 2;
 }
 
 .leaderCardContainer {
     display: grid;
     justify-content: space-evenly;
-    margin-left: -20px;
-    margin-right: -20px;
 }
 
 .leaderPortrait {
@@ -822,6 +824,9 @@ div.desc {
     #AboutUs {
         width: 100%;
     }
+    #carousel-button {
+        display: none;
+    }
 }
 @media only screen and (max-width: 900px) {
     .projectCardContainer,
@@ -851,6 +856,21 @@ div.desc {
     #carouselIMG {
         max-width: 100%;
         height: auto;
+    }
+    .leaderCard {
+        box-shadow: var(--heavyShadow);
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .leaderCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 600px) {
