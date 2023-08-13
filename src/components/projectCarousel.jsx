@@ -13,9 +13,11 @@ const ProjectCarousel = ({ images }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoad: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         arrows: false,
+        className: 'innerSlide',
+        dotsClass: 'slick-dots',
     };
 
     const next = () => {
@@ -29,18 +31,14 @@ const ProjectCarousel = ({ images }) => {
     return (
         <div id="carousel-container">
             <FaAngleLeft size="50px" onClick={prev} id="carousel-button" />
-            <div id="imgslider">
-                <Slider ref={sliderRef} {...settings}>
-                    {images.map((image) => (
-                        <div id="carouselContent" key={image.id}>
-                            <div id="carouselIMG">
-                                <img src={image.src} alt={image.alt} />
-                            </div>
-                            <p>{image.projectDesc}</p>
-                        </div>
-                    ))}
-                </Slider>
-            </div>
+            <Slider ref={sliderRef} {...settings}>
+                {images.map((image) => (
+                    <div id="carouselContent" key={image.id}>
+                        <img src={image.src} alt={image.alt} />
+                        <p>{image.projectDesc}</p>
+                    </div>
+                ))}
+            </Slider>
             <FaAngleRight size="50px" onClick={next} id="carousel-button" />
         </div>
     );

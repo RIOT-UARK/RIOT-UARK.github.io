@@ -3,10 +3,7 @@ const Documentation = () => {
         <div className="page documentation">
             <div className="textBlurb">
                 <h1>Documentation</h1>
-                <p>
-                    RIOT has the Big Five documentation system. The Big Five are
-                    as follows:
-                </p>
+                <p>RIOT has the Big Five documentation system. The Big Five are as follows:</p>
                 <ol>
                     <li>Documentation</li>
                     <li>Documentation (again)</li>

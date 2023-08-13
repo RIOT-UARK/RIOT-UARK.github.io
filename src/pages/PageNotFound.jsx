@@ -3,7 +3,8 @@ const PageNotFound = () => {
         <div class="page PageNotFound" style={{ padding: 20 }}>
             <center>
                 <h1>Error: Page not found</h1>
-                <p>The page you are looking for may not exist.</p>
+                <p>No robots here... Well... Just one.</p>
+                <img src="https://media.tenor.com/4ftZfqTlsQsAAAAd/robot-dancing-dance.gif" alt="dancing robot" />
             </center>
         </div>
     );

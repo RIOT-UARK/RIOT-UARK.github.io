@@ -31,13 +31,10 @@ const Projects = () => {
             <div className="textBlurb">
                 <h1>Projects</h1>
                 <p>
-                    RIOT is the home to many creative projects that have been
-                    developed and that are actively developed. This website acts
-                    as a hub point for denoting what projects are currently
-                    being developed, and what projects have already been
-                    completed. We give all files/resources developed, with the
-                    permission of the designers, to the public through this
-                    website.
+                    RIOT is the home to many creative projects that have been developed and that are actively developed.
+                    This website acts as a hub point for denoting what projects are currently being developed, and what
+                    projects have already been completed. We give all files/resources developed, with the permission of
+                    the designers, to the public through this website.
                 </p>
             </div>
             <div id="currentProjects">
@@ -58,10 +55,7 @@ const Projects = () => {
                 {Projects && (
                     <div className="projectCardContainer">
                         {Projects.map((project) => (
-                            <OldProjectCard
-                                key={project.id}
-                                project={project}
-                            />
+                            <OldProjectCard key={project.id} project={project} />
                         ))}
                     </div>
                 )}

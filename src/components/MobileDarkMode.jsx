@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
-const DarkModeToggle = () => {
+const MobileDarkMode = () => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
@@ -22,11 +22,10 @@ const DarkModeToggle = () => {
     }, [darkMode]);
 
     return (
-        <div id="darkMode" onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <FaSun size={15} /> : <FaMoon size={15} />}
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
+        <div className="MobileDarkModeButton" onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? <FaSun size={30} /> : <FaMoon size={30} />}
         </div>
     );
 };
 
-export default DarkModeToggle;
+export default MobileDarkMode;

@@ -1,8 +1,7 @@
 const leaderCard = ({ member }) => {
     if (member.position !== 'member' && member.position !== 'alumni') {
         let positionId = member.position.replace(/ /g, ''); //Remove spaces
-        let imagePath =
-            'Portraits/' + member.first_name + ' ' + member.last_name + '.jpg';
+        let imagePath = 'Portraits/' + member.first_name + ' ' + member.last_name + '.jpg';
         //const [imagePath, setImgSrc] = useState("Invalid Image Source");
 
         return (

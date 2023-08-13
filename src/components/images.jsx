@@ -10,13 +10,15 @@ const images = [
         id: 2,
         src: 'Projects/Lily.png',
         alt: 'Lily',
-        projectDesc: 'Lily',
+        projectDesc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor diam leo, facilisis semper diam congue ut. Proin ullamcorper sodales elementum. Sed at neque felis. Nulla in sollicitudin ante. Fusce viverra vulputate risus, quis tincidunt tortor malesuada ut. Duis commodo vitae augue quis accumsan. Ut vehicula, velit et malesuada cursus, ex enim vehicula justo, a luctus mauris metus vitae nibh. ',
     },
     {
         id: 3,
         src: 'Projects/IEEE Drone Bot.jpg',
         alt: 'IEEE Drone Bot',
-        projectDesc: 'IEEE Drone Bot',
+        projectDesc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor diam leo, facilisis semper diam congue ut. Proin ullamcorper sodales elementum. Sed at neque felis. Nulla in sollicitudin ante. Fusce viverra vulputate risus, quis tincidunt tortor malesuada ut. Duis commodo vitae augue quis accumsan. Ut vehicula, velit et malesuada cursus, ex enim vehicula justo, a luctus mauris metus vitae nibh. ',
     },
 ];
 export default images;
