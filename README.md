@@ -20,22 +20,21 @@ This is a repository for the **official** Robotics Interdiciplanary Organization
 
 1. Clone the repository:
 
-    ```bash
+    ```
     git clone https://github.com/your-repository/RIOT-Website.git
     ```
 
 2. Navigate to the project directory:
-    ```bash
+    ```
     cd RIOT-Website
     ```
 3. Install the dependencies:
-    ```bash
+    ```
     npm install
     ```
 
 ### Running the Website for Development
-
-    ```bash
+    ```
     npm start
     ```
 
