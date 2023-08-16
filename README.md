@@ -29,12 +29,14 @@ This is a repository for the **official** Robotics Interdiciplanary Organization
     cd RIOT-Website
     ```
 3. Install the dependencies:
-    ```
+    ```bash
     npm install
     ```
 
 ### Running the Website for Development
-    ```
+
+1. Run the start script
+    ```bash
     npm start
     ```
 
