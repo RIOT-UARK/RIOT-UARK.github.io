@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
-import MobileDarkMode from './MobileDarkMode';
+import MobileDarkMode from '../MobileDarkMode/MobileDarkMode';
 
 const MobileNavBar = () => {
     const [sidebar, setSidebar] = useState(false);
