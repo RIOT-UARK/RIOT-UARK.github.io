@@ -1,9 +1,9 @@
 import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
 
-import LeaderCard from '../components/leaderCard';
-import TeamLeadCard from '../components/teamLeadCard';
-import MemberCard from '../components/memberCard';
+import LeaderCard from '../components/leaderCard/leaderCard';
+import TeamLeadCard from '../components/teamLeadCard/teamLeadCard';
+import MemberCard from '../components/memberCard/memberCard';
 
 const MeetTheTeam = () => {
     const [fetchError, setFetchError] = useState(null);

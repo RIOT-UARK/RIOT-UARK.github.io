@@ -474,6 +474,14 @@ nav a:hover {
     height: 60px;
 }
 
+.font-16 {
+    font-size: 16px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
 .nav-text a {
     text-decoration: none;
     color: var(--white);
