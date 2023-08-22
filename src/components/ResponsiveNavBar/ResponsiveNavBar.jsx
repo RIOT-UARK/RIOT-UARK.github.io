@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MobileNavBar from './MobileNavBar';
-import NavBar from './NavBar';
+import MobileNavBar from '../MobileNavBar/MobileNavBar';
+import NavBar from '../NavBar/NavBar';
 
 const ResponsiveNavBar = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
