@@ -1,7 +1,7 @@
 import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
 
-import BattlebotCard from '../components/battlebotCard';
+import BattlebotCard from '../components/battlebotCard/battlebotCard';
 
 function GetEmail({ email, position }) {
     if (position === 'President') {

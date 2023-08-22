@@ -1,9 +1,9 @@
 import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
 
-import PortalExample from '../components/PortalExample';
+import PortalExample from '../components/PortalExample/PortalExample';
 //import ProjectCard from "../components/ProjectCard"
-import OldProjectCard from '../components/OldProjectCard';
+import OldProjectCard from '../components/OldProjectCard/OldProjectCard';
 
 const Projects = () => {
     const [fetchError, setFetchError] = useState(null);

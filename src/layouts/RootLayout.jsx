@@ -1,5 +1,6 @@
-import ResponsiveNavBar from '../components/ResponsiveNavBar';
+import ResponsiveNavBar from '../components/ResponsiveNavBar/ResponsiveNavBar';
 import { Outlet } from 'react-router-dom';
+import Footer from '../components/footer/footer';
 const RootLayout = () => {
     return (
         <>
@@ -7,8 +8,9 @@ const RootLayout = () => {
                 <ResponsiveNavBar />
             </header>
             <main>
-                <Outlet /> {/* This is where the page content will be rendered! */}
+                <Outlet />]
             </main>
+            <Footer></Footer>
         </>
     );
 };
