@@ -127,10 +127,6 @@ const Microbots = () => {
                 />
             </center>
             <div>
-                <h2>Document</h2>
-                <p>Test text</p>
-            </div>
-            <div>
                 <center>
                     <ToggleSignup key={offSeason} offSeason={offSeason} formLink={formLink} />
                 </center>
@@ -154,7 +150,7 @@ const Microbots = () => {
 
             <div>
                 <center>
-                    <h1>This Season</h1>
+                    {/* <h1>This Season</h1> */}
                     {/* <ThisSeason key={Battlebots.id} Battlebots={Battlebots} currentSemester={currentSemester}/> */}
                     {/* {fetchError && (<p>{fetchError}</p>)}
 				{Battlebots && (
