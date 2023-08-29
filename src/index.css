@@ -135,8 +135,14 @@ footer {
     margin-top: 100px;
 }
 
+.sponsorContainer {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto;
+}
+
 .sponsor {
-    color: var(--inverse);
+    height: 100px;
 }
 
 #RIOTlogo {
@@ -760,10 +766,13 @@ div.desc {
 
 @media only screen and (min-width: 1200px) {
     .projectCardContainer,
-    .teamLeadCardContainer,
+    /*.teamLeadCardContainer,       Only 3 teams right now*/
     .memberCardContainer,
     .battlebotCardContainer {
         grid-template-columns: auto auto auto auto;
+    }
+    .teamLeadCardContainer {
+        grid-template-columns: auto auto auto;
     }
     .leaderCardContainer {
         grid-template-columns: auto auto;

@@ -17,11 +17,11 @@ const router = createBrowserRouter(
         <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />,
             <Route path="/Microbots" element={<Microbots />} />,
-            <Route path="/Projects" element={<Projects />} />,
-            <Route path="/Documentation" element={<Documentation />} />,
+            <Route path="/Projects" element={<Placeholder />} />,
+            <Route path="/Documentation" element={<Placeholder />} />,
             <Route path="/MeetTheTeam" element={<MeetTheTeam />} />,
-            <Route path="/Donate" element={<Donate />} />,
-            <Route path="/GettingStarted" element={<GettingStarted />} />,
+            <Route path="/Donate" element={<Placeholder />} />,
+            <Route path="/GettingStarted" element={<Placeholder />} />,
             <Route path="/Placeholder" element={<Placeholder />} />,
             <Route path="*" element={<PageNotFound />} />
         </Route>
