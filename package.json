@@ -1,7 +1,6 @@
 {
     "name": "RIOT Website",
     "version": "0.1.0",
-    "homepage": "https://bakedpotato101.github.io/riot-website-",
     "private": true,
     "dependencies": {
         "@supabase/supabase-js": "^2.33.1",
