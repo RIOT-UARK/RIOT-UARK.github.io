@@ -1,9 +1,9 @@
 import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
 
-import images from '../components/images';
-import ProjectCarousel from '../components/projectCarousel';
-import LogoSpin from '../components/logoSpin';
+import images from '../components/projectCarousel/images';
+import ProjectCarousel from '../components/projectCarousel/projectCarousel';
+import LogoSpin from '../components/logoSpin/logoSpin';
 
 const Home = () => {
     const [fetchError, setFetchError] = useState(null);

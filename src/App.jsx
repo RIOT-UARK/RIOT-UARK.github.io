@@ -14,7 +14,7 @@ import RootLayout from './layouts/RootLayout';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<RootLayout />}>
+        <Route path="" element={<RootLayout />}>
             <Route index element={<Home />} />,
             <Route path="/Microbots" element={<Microbots />} />,
             <Route path="/Projects" element={<Placeholder />} />,
@@ -23,13 +23,13 @@ const router = createBrowserRouter(
             <Route path="/Donate" element={<Placeholder />} />,
             <Route path="/GettingStarted" element={<Placeholder />} />,
             <Route path="/Placeholder" element={<Placeholder />} />,
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/*" element={<PageNotFound />} />
         </Route>
     )
 );
 
 function App() {
-    return <RouterProvider router={router} />;
+    return <RouterProvider basename="/riot-website-" router={router} />;
 }
 
 export default App;
