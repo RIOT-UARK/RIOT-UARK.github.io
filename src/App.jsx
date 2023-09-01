@@ -14,7 +14,7 @@ import RootLayout from './layouts/RootLayout';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<RootLayout />}>
+        <Route path="/riot-website-" element={<RootLayout />}>
             <Route index element={<Home />} />,
             <Route path="/Microbots" element={<Microbots />} />,
             <Route path="/Projects" element={<Placeholder />} />,
