@@ -8,17 +8,17 @@ const images = [
     },
     {
         id: 2,
-        src: 'Projects/Lily.png',
+        src: 'Projects/Lily.jpg',
         alt: 'Lily',
         projectDesc:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor diam leo, facilisis semper diam congue ut. Proin ullamcorper sodales elementum. Sed at neque felis. Nulla in sollicitudin ante. Fusce viverra vulputate risus, quis tincidunt tortor malesuada ut. Duis commodo vitae augue quis accumsan. Ut vehicula, velit et malesuada cursus, ex enim vehicula justo, a luctus mauris metus vitae nibh. ',
+            'Lily is a 1-pound antweight battlebot made by grad student Justin Dykstra for the Spring 2023 battlebot competition, where it won the crowd favorite award. Lily moves using vibrations in the base and attacks by pivoting and swinging its legs.',
     },
     {
         id: 3,
         src: 'Projects/IEEE Drone Bot.jpg',
         alt: 'IEEE Drone Bot',
         projectDesc:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor diam leo, facilisis semper diam congue ut. Proin ullamcorper sodales elementum. Sed at neque felis. Nulla in sollicitudin ante. Fusce viverra vulputate risus, quis tincidunt tortor malesuada ut. Duis commodo vitae augue quis accumsan. Ut vehicula, velit et malesuada cursus, ex enim vehicula justo, a luctus mauris metus vitae nibh. ',
+            'This robot was created by RIOT members partnered with a senior design team of computer science students. It went on to the Spring 2023 IEEE competition and won third place. The robot autonomously used computer vision to navigate a maze.',
     },
 ];
 export default images;
