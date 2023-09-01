@@ -4,8 +4,8 @@ const footer = () => {
         <footer>
             <center>
                 <p class="font-16">Contact Us: robotics@uark.edu</p>
-                <p class="font-16">Ben Burdess (President): bhburdes@uark.edu</p>
-                <p class="font-16">Nathaniel House (Vice President): nah007@uark.edu</p>
+                <p class="font-16">Nathaniel House (President): nah007@uark.edu</p>
+                <p class="font-16">Grace Harding (Vice President): gharding@uark.edu</p>
                 <div class="socialMediaContainer">
                     <a class="socialMediaLink" href="https://discord.gg/5YRM3pQYev">
                         <Discord size={75} color="white" />
@@ -21,7 +21,7 @@ const footer = () => {
                     </a>
                 </div>
                 <p class="font-12">Powered by Supabase</p>
-                <p class="font-12">Copyright(?) RIOT 2023, authored by Ben Fletcher</p>
+                <p class="font-12">RIOT 2023, authored by Ben Fletcher and Jackson Baker</p>
             </center>
         </footer>
     );
