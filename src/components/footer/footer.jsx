@@ -7,15 +7,15 @@ const footer = () => {
                 <p class="font-16">Ben Burdess (President): bhburdes@uark.edu</p>
                 <p class="font-16">Nathaniel House (Vice President): nah007@uark.edu</p>
                 <div class="socialMediaContainer">
-                    <a class="socialMediaLink" href="https://discord.gg/5YRM3pQYev" target="_blank">
+                    <a class="socialMediaLink" href="https://discord.gg/5YRM3pQYev">
                         <Discord size={75} color="white" />
                         <strong class="socialMediaText">Join our Discord</strong>
                     </a>
-                    <a class="socialMediaLink" href="https://www.instagram.com/riot_uark/" target="_blank">
+                    <a class="socialMediaLink" href="https://www.instagram.com/riot_uark/">
                         <Instagram size={75} color="white" />
                         <strong class="socialMediaText">Follow us on Instagram</strong>
                     </a>
-                    <a class="socialMediaLink" href="https://twitter.com/riot_uark" target="_blank">
+                    <a class="socialMediaLink" href="https://twitter.com/riot_uark">
                         <Twitter size={75} color="white" />
                         <strong class="socialMediaText">Follow us on Twitter</strong>
                     </a>
