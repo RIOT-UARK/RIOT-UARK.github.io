@@ -8,7 +8,7 @@ const RootLayout = () => {
                 <ResponsiveNavBar />
             </header>
             <main>
-                <Outlet />]
+                <Outlet />
             </main>
             <Footer></Footer>
         </>
