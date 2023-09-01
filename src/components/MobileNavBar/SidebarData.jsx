@@ -3,32 +3,32 @@ import React from 'react';
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/riot-website-/',
+        path: '/',
         cName: 'nav-text',
     },
     {
         title: 'Microbots',
-        path: '/riot-website-/Microbots',
+        path: '/Microbots',
         cName: 'nav-text',
     },
     {
         title: 'Projects',
-        path: '/riot-website-/Projects',
+        path: '/Projects',
         cName: 'nav-text',
     },
     {
         title: 'Meet the Team',
-        path: '/riot-website-/MeetTheTeam',
+        path: '/MeetTheTeam',
         cName: 'nav-text',
     },
     {
         title: 'Donate',
-        path: '/riot-website-/Donate',
+        path: '/Donate',
         cName: 'nav-text',
     },
     {
         title: 'Getting Started',
-        path: '/riot-website-/GettingStarted',
+        path: '/GettingStarted',
         cName: 'nav-text',
     },
 ];
