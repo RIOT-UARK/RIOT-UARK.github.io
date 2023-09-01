@@ -1,9 +1,10 @@
 {
     "name": "RIOT Website",
     "version": "0.1.0",
+    "homepage": "https://riot-uark.github.io/",
     "private": true,
     "dependencies": {
-        "@supabase/supabase-js": "^2.32.0",
+        "@supabase/supabase-js": "^2.33.1",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -11,7 +12,7 @@
         "react-classlist": "^1.1.2",
         "react-dom": "^18.2.0",
         "react-icons": "^4.10.1",
-        "react-router-dom": "^6.14.2",
+        "react-router-dom": "^6.15.0",
         "react-scripts": "^5.0.1",
         "react-slick": "^0.29.0",
         "slick-carousel": "^1.8.1",
@@ -22,7 +23,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -43,6 +46,7 @@
         ]
     },
     "devDependencies": {
+        "gh-pages": "^6.0.0",
         "prettier": "3.0.1"
     }
 }
