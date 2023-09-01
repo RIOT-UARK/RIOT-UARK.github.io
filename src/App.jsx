@@ -14,16 +14,16 @@ import RootLayout from './layouts/RootLayout';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/riot-website-" element={<RootLayout />}>
+        <Route path="" element={<RootLayout />}>
             <Route index element={<Home />} />,
-            <Route path="/riot-website-/Microbots" element={<Microbots />} />,
-            <Route path="/riot-website-/Projects" element={<Placeholder />} />,
-            <Route path="/riot-website-/Documentation" element={<Placeholder />} />,
-            <Route path="/riot-website-/MeetTheTeam" element={<MeetTheTeam />} />,
-            <Route path="/riot-website-/Donate" element={<Placeholder />} />,
-            <Route path="/riot-website-/GettingStarted" element={<Placeholder />} />,
-            <Route path="/riot-website-/Placeholder" element={<Placeholder />} />,
-            <Route path="/riot-website-/*" element={<PageNotFound />} />
+            <Route path="/Microbots" element={<Microbots />} />,
+            <Route path="/Projects" element={<Placeholder />} />,
+            <Route path="/Documentation" element={<Placeholder />} />,
+            <Route path="/MeetTheTeam" element={<MeetTheTeam />} />,
+            <Route path="/Donate" element={<Placeholder />} />,
+            <Route path="/GettingStarted" element={<Placeholder />} />,
+            <Route path="/Placeholder" element={<Placeholder />} />,
+            <Route path="/*" element={<PageNotFound />} />
         </Route>
     )
 );
