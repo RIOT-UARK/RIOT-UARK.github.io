@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
         "@supabase/supabase-js": "^2.33.1",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
@@ -15,17 +16,14 @@
         "react-scripts": "^5.0.1",
         "react-slick": "^0.29.0",
         "slick-carousel": "^1.8.1",
-        "web-vitals": "^2.1.4",
-        "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
+        "web-vitals": "^2.1.4"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "CI=false react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "format": "prettier --write .",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "format": "prettier --write ."
     },
     "eslintConfig": {
         "extends": [
@@ -46,7 +44,11 @@
         ]
     },
     "devDependencies": {
-        "gh-pages": "^6.0.0",
         "prettier": "3.0.1"
+    },
+    "pnpm": {
+        "overrides": {
+            "nth-check@<2.0.1": ">=2.0.1"
+        }
     }
 }

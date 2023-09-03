@@ -1,25 +1,28 @@
 @charset "UTF-8";
 
 :root {
-    --background-color: whitesmoke;
+    --background-color: #f8fafc;
     --white: #ecf3fe;
     --navy: #1c3d6e;
     --grey: grey;
     --inverse: black;
+    --text: #040911;
     --lightGrey: #ccc;
     --navHover: #282828;
+    --reallyLightShadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     --lightShadow: 0 4px 8px 2px rgba(27, 60, 109, 0.3);
     --heavyShadow: 0 4px 8px 0 rgba(27, 60, 109, 0.5);
+    
 }
 
 [data-theme='dark'] {
-    --background-color: rgb(10, 0, 17);
-    color: whitesmoke;
-    --navy: #3e5a8c;
+    --background-color: #040911;
     --grey: #b0b0b0;
     --inverse: #e5e5e5;
     --lightGrey: #7a7a7a;
     --navHover: #333333;
+    --text: #e2ebf8;
+
 }
 
 * {
@@ -32,6 +35,9 @@ body {
     font-family: 'Roboto', sans-serif;
     padding-top: 20px;
     margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    color: var(--text)
 }
 
 h1 {
@@ -123,6 +129,7 @@ footer {
 }
 
 #DiscordWidget {
+    margin: auto;
     float: right;
 }
 
@@ -135,14 +142,24 @@ footer {
     margin-top: 100px;
 }
 
-.sponsorContainer {
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: auto auto;
+.sponsorship {
+    margin-top: 50px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.sponsorimgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .sponsor {
+    max-width: 100%;
+    width: auto;
     height: 100px;
+    margin: 20px;
 }
 
 #RIOTlogo {
@@ -371,7 +388,7 @@ footer {
 /*----------------NAVBAR-----------------*/
 /*---------------------------------------*/
 nav {
-    background-color: black;
+    background-color: var(--navy);
     text-align: left;
     font-size: 16px;
     position: fixed;
@@ -385,12 +402,16 @@ nav {
 nav a {
     color: var(--white);
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
 }
 
-nav a:hover {
-    background-color: var(--navHover);
+nav a:hover, nav a.active {
+    background-color: var(--background-color);
+    color: var(--text);
 }
+
 
 #darkMode {
     display: flex;
@@ -398,18 +419,17 @@ nav a:hover {
     align-items: center;
     gap: 5px;
     height: 100%;
+    width: 150px;
     color: var(--white);
     background-color: var(--navy);
-
     float: right;
     cursor: pointer;
     margin-top: 13px;
-    margin-right: 10px;
+    margin-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: solid var(--white);
     border-radius: 20px;
 }
 
@@ -433,7 +453,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: var(--navy);
     position: fixed;
     z-index: 1100;
     top: 0;
@@ -512,6 +532,19 @@ nav a:hover {
 .nav-title {
     margin-left: 16px;
 }
+
+/*---------------------------------------*/
+/*-------------Placeholder---------------*/
+/*---------------------------------------*/
+
+.Placeholder img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+
+
 
 /*---------------------------------------*/
 /*-------------Project Cards-------------*/
@@ -651,6 +684,7 @@ div.desc {
 
 .leaderCard {
     box-shadow: var(--heavyShadow);
+    border-radius: 15px;
     width: 600px;
     height: 475px;
     padding: 20px 20px 0px 20px;
@@ -666,11 +700,14 @@ div.desc {
 .leaderPortrait {
     width: 260px;
     height: 300px;
+    border-radius: 10px;
+    box-shadow: var(--reallyLightShadow);
 }
 
 /*Team lead cards*/
 .teamLeadCard {
     box-shadow: var(--heavyShadow);
+    border-radius: 15px;
     width: 300px;
     height: 160px;
     margin: 3%;
@@ -858,6 +895,9 @@ div.desc {
         margin-left: 5%;
         margin-right: 5%;
     }
+    .sponsorimgs {
+        flex-direction: column;
+    }
 }
 @media only screen and (max-width: 700px) {
     .moda-content {
@@ -892,14 +932,31 @@ div.desc {
 }
 @media only screen and (max-width: 600px) {
     .projectCardContainer,
-    .teamLeadCardContainer,
     .memberCardContainer,
     .battlebotCardContainer {
         grid-template-columns: auto;
     }
+    .teamLeadCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     #prevSemesters {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    #DiscordWidget {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .leaderCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
     }
 }
 @media only screen and (max-width: 400px) {

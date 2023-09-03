@@ -121,7 +121,7 @@ const Microbots = () => {
             </div>
             <center>
                 <img
-                    class="default-img"
+                    className="default-img"
                     src="Spring 2023 Microbots group photo.jpg"
                     alt="Group photo from the Spring 2023 competition at Fayetteville Public Library"
                 />

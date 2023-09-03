@@ -21,12 +21,12 @@ This is a repository for the **official** Robotics Interdiciplanary Organization
 1. Clone the repository:
 
     ```
-    git clone https://github.com/your-repository/RIOT-Website.git
+    git clone https://github.com/RIOT-UARK/RIOT-UARK-WEBSITE.git
     ```
 
 2. Navigate to the project directory:
     ```
-    cd RIOT-Website
+    cd RIOT-UARK-WEBSITE
     ```
 3. Install the dependencies:
     ```bash
