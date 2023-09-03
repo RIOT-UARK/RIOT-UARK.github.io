@@ -407,9 +407,11 @@ nav a {
     border-radius: 25px;
 }
 
-nav a:hover {
-    background-color: var(--navHover);
+nav a:hover, nav a.active {
+    background-color: var(--background-color);
+    color: var(--text);
 }
+
 
 #darkMode {
     display: flex;

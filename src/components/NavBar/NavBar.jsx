@@ -1,16 +1,28 @@
 import React from 'react';
 import DarkModeToggle from '../darkMode/darkMode';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/Microbots">Microbots</Link>
-            <Link to="/Projects">Projects</Link>
-            <Link to="/MeetTheTeam">Meet the Team</Link>
-            <Link to="/Donate">Donate</Link>
-            <Link to="/GettingStarted">Getting Started</Link>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Home
+            </NavLink>
+            <NavLink to="/Microbots" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Microbots
+            </NavLink>
+            <NavLink to="/Projects" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Projects
+            </NavLink>
+            <NavLink to="/MeetTheTeam" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Meet the Team
+            </NavLink>
+            <NavLink to="/Donate" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Donate
+            </NavLink>
+            <NavLink to="/GettingStarted" className={({ isActive }) => (isActive ? 'active' : '')}>
+                Getting Started
+            </NavLink>
             <DarkModeToggle />
         </nav>
     );
