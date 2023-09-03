@@ -930,10 +930,15 @@ div.desc {
 }
 @media only screen and (max-width: 600px) {
     .projectCardContainer,
-    .teamLeadCardContainer,
     .memberCardContainer,
     .battlebotCardContainer {
         grid-template-columns: auto;
+    }
+    .teamLeadCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #prevSemesters {
         margin-left: 10%;
