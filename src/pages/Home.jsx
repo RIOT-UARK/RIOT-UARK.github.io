@@ -69,14 +69,12 @@ const Home = () => {
                 )}
             </center>
 
-            <div>
-                <center>
+            <div className="sponsorship">
                     <h1>Sponsorship</h1>
-                    <div className = "sponsorContainer">
+                    <div className = "sponsorimgs">
                         <img className = "sponsor" src = "JMP Solutions Logo.png" alt = "JMP Solutions" />
                         <img className = "sponsor" src = "Fayetteville Public Library logo.png" alt = "Fayetteville Public Library" />
                     </div>
-                </center>
             </div>
             <br></br>
             <br></br>
