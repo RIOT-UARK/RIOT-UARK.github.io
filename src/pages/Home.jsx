@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import images from '../components/projectCarousel/images';
 import ProjectCarousel from '../components/projectCarousel/projectCarousel';
 import LogoSpin from '../components/logoSpin/logoSpin';
+import linkedinFeed from '../components/linkedinFeed/linkedinFeed';
 
 const Home = () => {
     const [fetchError, setFetchError] = useState(null);
@@ -55,10 +56,13 @@ const Home = () => {
                     seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
                     make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
                 </p>
-                
-                {/* LinkedIn embed will go here */}
-
+                <iframe src='https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264'
+                frameborder='0'
+                width='100%'
+                height='500'>
+                </iframe>
             </div>
+            
             <center id="Projects">
                 <h1>Projects</h1>
                 {fetchError && <p>{fetchError}</p>}
