@@ -1,5 +1,5 @@
 const teamLeadCard = ({ member }) => {
-    if (member.team_lead !== null) {
+    if (member.team_lead != null) {
         return (
             <div className="teamLeadCard">
                 <h3>
