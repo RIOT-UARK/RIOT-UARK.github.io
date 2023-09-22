@@ -34,8 +34,8 @@ const MeetTheTeam = () => {
                     RIOT is consisted of students who founded the registered student org. turned non profit in 2023. The
                     founder, Benjamin Burdess started the club in spring of 2022 during his classes to begin working
                     towards a vision of starting a premier robotics club for the University of Arkansas. With Nathaniel
-                    House as his founding Vice President and Thalia Frankhouse as RIOT's founding Treasurer, they built the
-                    small, single robot driven club to what it is today: The University's largest and best funded
+                    House as his founding Vice President and Thalia Frankhouse as RIOT's founding Treasurer, they built
+                    the small, single robot driven club to what it is today: The University's largest and best funded
                     engineering RSO, in contact and active development with all areas of robotics research and education
                     on and off campus throughout the community of Northwest Arkansas.
                 </p>
