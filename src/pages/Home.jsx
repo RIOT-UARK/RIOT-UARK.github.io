@@ -89,10 +89,12 @@ const Home = () => {
             <br></br>
             <div>
                 <h1>Meeting Times & Important Dates</h1>
-                <img src="" alt="Weekly Schedule"></img>
-                <ul>
-                    <li>11/16/23: Microbots Competition @ Union Flag Room</li>
-                </ul>
+                <center>
+                    <h3>Workshop meetings @ ELEG Lounge 2:00pm</h3>
+                    <h3>Main Meetings @ ELEG Lounge 2:00pm</h3>
+                    <h3>11/16/23: Microbots Competition @ Union Flag Room 8:00am</h3>
+                </center>
+                
             </div>
         </div>
     );
