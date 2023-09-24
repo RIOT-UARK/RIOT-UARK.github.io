@@ -12,7 +12,6 @@
     --reallyLightShadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     --lightShadow: 0 4px 8px 2px rgba(27, 60, 109, 0.3);
     --heavyShadow: 0 4px 8px 0 rgba(27, 60, 109, 0.5);
-    
 }
 
 [data-theme='dark'] {
@@ -22,7 +21,6 @@
     --lightGrey: #7a7a7a;
     --navHover: #333333;
     --text: #e2ebf8;
-
 }
 
 * {
@@ -37,7 +35,7 @@ body {
     margin: 0;
     width: 100%;
     overflow-x: hidden;
-    color: var(--text)
+    color: var(--text);
 }
 
 h1 {
@@ -407,11 +405,11 @@ nav a {
     border-radius: 25px;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     background-color: var(--background-color);
     color: var(--text);
 }
-
 
 #darkMode {
     display: flex;
@@ -542,9 +540,6 @@ nav a:hover, nav a.active {
     width: 100%;
     height: auto;
 }
-
-
-
 
 /*---------------------------------------*/
 /*-------------Project Cards-------------*/
@@ -956,7 +951,6 @@ div.desc {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-
     }
 }
 @media only screen and (max-width: 400px) {

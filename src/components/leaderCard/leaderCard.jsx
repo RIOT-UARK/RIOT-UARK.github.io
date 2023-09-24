@@ -1,13 +1,22 @@
-const leaderCard = ({ member }) => {
+import { useEffect, useState } from 'react';
+import { FaUser, FaUserAstronaut } from 'react-icons/fa';
+
+const LeaderCard = ({ member }) => {
+    const [darkMode, setDarkMode] = useState(localStorage.getItem('theme') === 'dark');
     if (member.position !== 'member' && member.position !== 'alumni') {
-        let positionId = member.position.replace(/ /g, ''); //Remove spaces
-        let imagePath = 'Portraits/' + member.first_name + ' ' + member.last_name + '.jpg';
-        //const [imagePath, setImgSrc] = useState("Invalid Image Source");
+        let positionId = member.position.replace(/ /g, '');
+        let imagePath = member.image_url;
 
         return (
             <div className="leaderCard" id={positionId}>
                 <div className="leaderCardInfo">
-                    <img src={imagePath} alt="" className="leaderPortrait" />
+                    {imagePath ? (
+                        <img src={imagePath} alt="" className="leaderPortrait" />
+                    ) : darkMode ? (
+                        <FaUserAstronaut size={250} color={'#1c3d6e'} />
+                    ) : (
+                        <FaUser size={250} color={'#1c3d6e'} />
+                    )}
                     <h3>
                         {member.first_name} {member.last_name}
                     </h3>
@@ -22,4 +31,4 @@ const leaderCard = ({ member }) => {
     }
 };
 
-export default leaderCard;
+export default LeaderCard;

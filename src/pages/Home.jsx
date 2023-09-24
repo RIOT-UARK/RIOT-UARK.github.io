@@ -56,13 +56,14 @@ const Home = () => {
                     seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
                     make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
                 </p>
-                <iframe src='https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264'
-                frameborder='0'
-                width='100%'
-                height='500'>
-                </iframe>
+                <iframe
+                    src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264"
+                    frameborder="0"
+                    width="100%"
+                    height="500"
+                ></iframe>
             </div>
-            
+
             <center id="Projects">
                 <h1>Projects</h1>
                 {fetchError && <p>{fetchError}</p>}
@@ -74,20 +75,26 @@ const Home = () => {
             </center>
 
             <div className="sponsorship">
-                    <h1>Sponsorship</h1>
-                    <div className = "sponsorimgs">
-                        <img className = "sponsor" src = "JMP Solutions Logo.png" alt = "JMP Solutions" />
-                        <img className = "sponsor" src = "Fayetteville Public Library logo.png" alt = "Fayetteville Public Library" />
-                    </div>
+                <h1>Sponsorship</h1>
+                <div className="sponsorimgs">
+                    <img className="sponsor" src="JMP Solutions Logo.png" alt="JMP Solutions" />
+                    <img
+                        className="sponsor"
+                        src="Fayetteville Public Library logo.png"
+                        alt="Fayetteville Public Library"
+                    />
+                </div>
             </div>
             <br></br>
             <br></br>
             <div>
                 <h1>Meeting Times & Important Dates</h1>
-                <img src="" alt="Weekly Schedule"></img>
-                <ul>
-                    <li>11/16/23: Microbots Competition @ Union Flag Room</li>
-                </ul>
+                <center>
+                    <h3>Workshop meetings @ ELEG Lounge 2:00pm</h3>
+                    <h3>Main Meetings @ ELEG Lounge 2:00pm</h3>
+                    <h3>11/16/23: Microbots Competition @ Union Flag Room 8:00am</h3>
+                </center>
+                
             </div>
         </div>
     );
