@@ -4,30 +4,62 @@ import { useEffect, useState } from 'react';
 import LeaderCard from '../components/leaderCard/leaderCard';
 import TeamLeadCard from '../components/teamLeadCard/teamLeadCard';
 import MemberCard from '../components/memberCard/memberCard';
+import BoardMemberCard from '../components/boardMemberCard/boardMemberCard';
 
 const MeetTheTeam = () => {
-    const [fetchError, setFetchError] = useState(null);
+    const [fetchMemberError, setFetchMemberError] = useState(null);
     const [members, setMembers] = useState(null);
+    const [boardMembers, setBoardMembers] = useState(null);
+    const [fetchBoardMemberError, setFetchBoardMemberError] = useState(null);
 
     useEffect(() => {
         const fetchMembers = async () => {
             const { data, error } = await supabase.from('Members').select();
 
             if (error) {
-                setFetchError('Error: failed to fetch data');
+                setFetchMemberError('Error: failed to fetch member data');
                 console.log(error);
                 setMembers(null);
             }
             if (data) {
                 setMembers(data);
-                setFetchError(null);
+                setFetchMemberError(null);
             }
         };
         fetchMembers();
     }, []);
 
+    useEffect(() => {
+        const fetchBoardMembers = async () => {
+            const { data, error } = await supabase.from('Board Members').select();
+
+            if (error) {
+                setFetchBoardMemberError('Error: failed to fetch board member data');
+                console.log(error);
+                setBoardMembers(null);
+            }
+            if (data) {
+                setBoardMembers(data);
+                setFetchBoardMemberError(null);
+            }
+        };
+        fetchBoardMembers();
+    }, []);
+
     return (
         <div className="page MeetTheTeam">
+            <h1>Meet The Board</h1>
+            <div id="boardMemberContainer">
+                {fetchBoardMemberError && <p>{fetchBoardMemberError}</p>}
+                {boardMembers && (
+                    <div className="boardMemberCardContainer">
+                        {boardMembers.map((boardMember) => (
+                            <BoardMemberCard boardMember={boardMember} />
+                        ))}
+                    </div>
+                )}
+            </div>
+
             <div className="textBlurb">
                 <h1>Meet the Team</h1>
                 <p>
@@ -40,7 +72,7 @@ const MeetTheTeam = () => {
                     on and off campus throughout the community of Northwest Arkansas.
                 </p>
             </div>
-            {fetchError && <p>{fetchError}</p>}
+            {fetchMemberError && <p>{fetchMemberError}</p>}
             {members && (
                 <center>
                     <div id="leadership">

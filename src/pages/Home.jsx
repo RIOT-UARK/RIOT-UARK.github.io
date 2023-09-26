@@ -94,7 +94,6 @@ const Home = () => {
                     <h3>Main Meetings @ ELEG Lounge 2:00pm</h3>
                     <h3>11/16/23: Microbots Competition @ Union Flag Room 8:00am</h3>
                 </center>
-                
             </div>
         </div>
     );
