@@ -78,7 +78,6 @@ a:visited {
 }
 
 .page {
-    margin-top: 100px;
     padding-bottom: 30px;
     margin-left: 20px;
     margin-right: 20px;
@@ -654,11 +653,11 @@ div.desc {
 }
 
 .boardMemberCard {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
     box-shadow: var(--lightShadow);
     width: 400px;
     height: 500px;
@@ -675,16 +674,13 @@ div.desc {
     box-shadow: var(--reallyLightShadow);
 }
 
-
-
-
-
-
-
-
 /*---------------------------------------*/
 /*----------MEET THE TEAM CARDS----------*/
 /*---------------------------------------*/
+
+.MeetTheTeam {
+    margin-top: 100px;
+}
 .container {
     padding: 0 16px;
 }
