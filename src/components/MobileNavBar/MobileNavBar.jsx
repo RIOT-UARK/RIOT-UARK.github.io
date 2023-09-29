@@ -30,7 +30,7 @@ const MobileNavBar = () => {
                         </li>
                         {SidebarData.map((item, index) => {
                             return (
-                                <li key={index} className={item.cName}>
+                                <li key={index} className={item.className}>
                                     <Link to={item.path}>
                                         <span className="nav-title">{item.title}</span>
                                     </Link>
