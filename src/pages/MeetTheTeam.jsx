@@ -16,6 +16,7 @@ const MeetTheTeam = () => {
         const fetchMembers = async () => {
             const { data, error } = await supabase.from('Members').select();
 
+
             if (error) {
                 setFetchMemberError('Error: failed to fetch member data');
                 console.log(error);

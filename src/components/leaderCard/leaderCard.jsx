@@ -14,10 +14,12 @@ const LeaderCard = ({ member }) => {
                         {imagePath ? (
                             <img src={imagePath} alt="" className="leaderPortrait" />
                         ) : darkMode ? (
-                            <FaUserAstronaut width={260} height={300} color={'#1c3d6e'} />
+                            <FaUserAstronaut size={250} color={'#1c3d6e'} />
                         ) : (
                             <FaUser size={250} color={'#1c3d6e'} />
-                        )}
+                        )
+
+                        }
                     </div>
                     <h3>
                         {member.first_name} {member.last_name}
