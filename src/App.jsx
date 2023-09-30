@@ -29,7 +29,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-    return <RouterProvider basename="/riot-website-" router={router} />;
+    return <RouterProvider router={router} />;
 }
 
 export default App;

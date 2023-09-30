@@ -13,17 +13,17 @@ const Footer = () => {
             <center>
                 <div className="socialMediaContainer">
                     <a href="https://discord.gg/5YRM3pQYev" title="Join our Discord">
-                        <Discord size={40} color={"#ecf3fe"} />
+                        <Discord size={40} color={'#ecf3fe'} />
                     </a>
                     <a href="https://www.instagram.com/riot_uark/" title="Follow us on Instagram">
-                        <Instagram size={40} color={"#ecf3fe"}/>
+                        <Instagram size={40} color={'#ecf3fe'} />
                     </a>
                     <a href="https://twitter.com/riot_uark" title="Follow us on Twitter">
-                        <Twitter size={40} color={"#ecf3fe"}/>
+                        <Twitter size={40} color={'#ecf3fe'} />
                     </a>
                 </div>
             </center>
-            
+
             <div style={{ fontSize: '12px', marginTop: '10px' }}>
                 <p>Powered by Supabase</p>
                 <p>RIOT 2023, authored by Ben Fletcher and Jackson Baker</p>

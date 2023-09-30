@@ -1,6 +1,5 @@
-
 const Placeholder = () => {
-    const src = "https://pbzigykjmvchcxxxdpmo.supabase.co/storage/v1/object/public/Misc/Backend%20developer.jpg";
+    const src = 'https://pbzigykjmvchcxxxdpmo.supabase.co/storage/v1/object/public/Misc/Backend%20developer.jpg';
     return (
         <div className="page Placeholder" style={{ padding: 20 }}>
             <center>
