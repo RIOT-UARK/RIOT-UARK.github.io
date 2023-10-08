@@ -9,7 +9,6 @@ import linkedinFeed from '../components/linkedinFeed/linkedinFeed';
 const Home = () => {
     const [fetchError, setFetchError] = useState(null);
     const [Projects, setProjects] = useState(null);
-
     useEffect(() => {
         const fetchProjects = async () => {
             const { data, error } = await supabase.from('Projects').select();

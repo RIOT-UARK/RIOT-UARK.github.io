@@ -1,66 +1,45 @@
-import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
-
+import { fetchMembers, fetchBoardMembers } from '../db/db';
 import LeaderCard from '../components/leaderCard/leaderCard';
 import TeamLeadCard from '../components/teamLeadCard/teamLeadCard';
 import MemberCard from '../components/memberCard/memberCard';
 import BoardMemberCard from '../components/boardMemberCard/boardMemberCard';
 
+
 const MeetTheTeam = () => {
-    const [fetchMemberError, setFetchMemberError] = useState(null);
     const [members, setMembers] = useState(null);
     const [boardMembers, setBoardMembers] = useState(null);
-    const [fetchBoardMemberError, setFetchBoardMemberError] = useState(null);
 
     useEffect(() => {
-        const fetchMembers = async () => {
-            const { data, error } = await supabase.from('Members').select();
-
-
-            if (error) {
-                setFetchMemberError('Error: failed to fetch member data');
-                console.log(error);
-                setMembers(null);
-            }
-            if (data) {
-                setMembers(data);
-                setFetchMemberError(null);
-            }
+        const fetchMembersData = async () => {
+            const members = await fetchMembers();
+            setMembers(members);
         };
-        fetchMembers();
+        fetchMembersData();
     }, []);
 
     useEffect(() => {
-        const fetchBoardMembers = async () => {
-            const { data, error } = await supabase.from('Board Members').select();
-
-            if (error) {
-                setFetchBoardMemberError('Error: failed to fetch board member data');
-                console.log(error);
-                setBoardMembers(null);
-            }
-            if (data) {
-                setBoardMembers(data);
-                setFetchBoardMemberError(null);
-            }
+        const fetchBoardMembersData = async () => {
+            const bmembers = await fetchBoardMembers();
+            setBoardMembers(bmembers);
         };
-        fetchBoardMembers();
+        fetchBoardMembersData();
     }, []);
+
 
     return (
+        
         <div className="page MeetTheTeam">
             <h1>Meet The Board</h1>
             <div id="boardMemberContainer">
-                {fetchBoardMemberError && <p>{fetchBoardMemberError}</p>}
-                {boardMembers && (
+                {boardMembers ? (
                     <div className="boardMemberCardContainer">
                         {boardMembers.map((boardMember) => (
                             <BoardMemberCard boardMember={boardMember} />
                         ))}
                     </div>
-                )}
+                ) : (<h1>Loading...</h1>)}
             </div>
-
             <div className="textBlurb">
                 <h1>Meet the Team</h1>
                 <p>
@@ -73,7 +52,6 @@ const MeetTheTeam = () => {
                     on and off campus throughout the community of Northwest Arkansas.
                 </p>
             </div>
-            {fetchMemberError && <p>{fetchMemberError}</p>}
             {members && (
                 <center>
                     <div id="leadership">
@@ -93,18 +71,13 @@ const MeetTheTeam = () => {
                             ))}
                         </div>
                     </div>
-
+                    
                     <div id="otherMembers">
                         <h2>Other Members</h2>
                         <p>
                             RIOT's projects and success as an organization would not be possible without all of our
                             other members, whose passions for robotics have brought us to where we are today.
                         </p>
-                        {/* <div className="memberCardContainer">
-							{members.map(member => (
-								<MemberCard key={member.id} member={member} />
-							))}
-						</div> */}
                     </div>
                 </center>
             )}
