@@ -10,8 +10,8 @@ const BoardMemberCard = ({ boardMember }) => {
                 <h3>
                     {boardMember.firstName} {boardMember.lastName}
                 </h3>
-                <h4>{boardMember.phoneNumber}</h4>
-                <h4>{boardMember.email}</h4>
+                <h4>{boardMember.internalTitle}</h4>
+                <h4>{boardMember.externalTitle}</h4>
             </div>
         );
     }
