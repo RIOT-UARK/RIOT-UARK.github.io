@@ -56,12 +56,6 @@ const Home = () => {
                     seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
                     make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
                 </p>
-                <iframe
-                    src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264"
-                    frameborder="0"
-                    width="100%"
-                    height="500"
-                ></iframe>
             </div>
 
             <center id="Projects">
