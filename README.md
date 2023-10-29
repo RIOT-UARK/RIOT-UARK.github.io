@@ -37,7 +37,7 @@ This is a repository for the **official** Robotics Interdiciplanary Organization
 
 1. Run the start script
     ```bash
-    npm start
+    npm run start
     ```
 
 **Woo pig!**

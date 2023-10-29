@@ -10,21 +10,25 @@ const LeaderCard = ({ member }) => {
         return (
             <div className="leaderCard" id={positionId}>
                 <div className="leaderCardInfo">
-                    {imagePath ? (
-                        <img src={imagePath} alt="" className="leaderPortrait" />
-                    ) : darkMode ? (
-                        <FaUserAstronaut size={250} color={'#1c3d6e'} />
-                    ) : (
-                        <FaUser size={250} color={'#1c3d6e'} />
-                    )}
+                    <div className="leaderPortraitContainer">
+                        {imagePath ? (
+                            <img src={imagePath} alt="" className="leaderPortrait" />
+                        ) : darkMode ? (
+                            <FaUserAstronaut size={250} color={'#1c3d6e'} />
+                        ) : (
+                            <FaUser size={250} color={'#1c3d6e'} />
+                        )
+
+                        }
+                    </div>
                     <h3>
                         {member.first_name} {member.last_name}
                     </h3>
                     <h4>{member.email}</h4>
-                    <p className="cardTitle">{member.position}</p>
+                    <p className="cardTitle">{member.position ? member.position : null}</p>
                 </div>
                 <div className="leaderCardDesc">
-                    <p className="leaderDesc">{member.desc}</p>
+                    <p className="leaderDesc">{member.desc ? member.desc : null}</p>
                 </div>
             </div>
         );
