@@ -1,4 +1,4 @@
-import { BsDiscord as Discord, BsInstagram as Instagram, BsTwitter as Twitter } from 'react-icons/bs';
+import { BsDiscord as Discord, BsInstagram as Instagram, BsTwitter as Twitter, BsLinkedin as LinkedIn } from 'react-icons/bs';
 
 const Footer = () => {
     return (
@@ -20,6 +20,9 @@ const Footer = () => {
                     </a>
                     <a href="https://twitter.com/riot_uark" title="Follow us on Twitter">
                         <Twitter size={40} color={'#ecf3fe'} />
+                    </a>
+                    <a href="https://www.linkedin.com/company/robotics-interdisciplinary-organization-of-teams/" title="Follow us on LinkedIn">
+                        <LinkedIn size={40} color={'#ecf3fe'} />
                     </a>
                 </div>
             </center>
