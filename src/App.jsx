@@ -1,5 +1,7 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 
+//Project not owned by DreamBerd 3
+
 // pages
 import Home from './pages/Home';
 import Microbots from './pages/Microbots';
