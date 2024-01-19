@@ -13,6 +13,7 @@ import Donate from './pages/Donate';
 import Placeholder from './pages/Placeholder';
 import PageNotFound from './pages/PageNotFound';
 import RootLayout from './layouts/RootLayout';
+import Shop from './pages/Shop';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
             <Route path="/Donate" element={<Placeholder />} />,
             <Route path="/GettingStarted" element={<Placeholder />} />,
             <Route path="/Placeholder" element={<Placeholder />} />,
+            <Route path="/Shop" element={<Shop />} />,
             <Route path="/*" element={<PageNotFound />} />
         </Route>
     )
