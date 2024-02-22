@@ -23,9 +23,6 @@ const NavBar = () => {
             <NavLink to="/Shop" className={({ isActive }) => (isActive ? 'active' : '')}>
                 Shop
             </NavLink>
-            <NavLink to="/GettingStarted" className={({ isActive }) => (isActive ? 'active' : '')}>
-                Getting Started
-            </NavLink>
             <DarkModeToggle />
         </nav>
     );

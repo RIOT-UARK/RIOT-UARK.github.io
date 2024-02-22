@@ -1,30 +1,25 @@
-import supabase from '../config/supabaseClient';
+import { fetchProjects } from '../db/db';
 import { useEffect, useState } from 'react';
 
-import PortalExample from '../components/PortalExample/PortalExample';
-//import ProjectCard from "../components/ProjectCard"
-import OldProjectCard from '../components/OldProjectCard/OldProjectCard';
+import ProjectCard from '../components/ProjectCards/ProjectCard';
 
 const Projects = () => {
-    const [fetchError, setFetchError] = useState(null);
-    const [Projects, setProjects] = useState(null);
+    const [projects, setProjects] = useState(null);
 
     useEffect(() => {
-        const fetchProjects = async () => {
-            const { data, error } = await supabase.from('Projects').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch data');
-                console.log(error);
-                setProjects(null);
-            }
-            if (data) {
-                setProjects(data);
-                setFetchError(null);
-            }
+        const fetchProjectsData = async () => {
+            const projects = await fetchProjects();
+            setProjects(projects);
         };
-        fetchProjects();
+        fetchProjectsData();
     }, []);
+
+        const currentProjects = projects && projects.filter(project =>
+            project.yearFinished === -1
+        );
+        const prevProjects = projects && projects.filter(project =>
+            project.yearFinished !== -1
+        );
 
     return (
         <div className="page projects">
@@ -37,29 +32,26 @@ const Projects = () => {
                     the designers, to the public through this website.
                 </p>
             </div>
-            <div id="currentProjects">
-                <h1>Current Projects</h1>
-                {fetchError && <p>{fetchError}</p>}
-                {Projects && (
+            {currentProjects && (
+                <div id="currentProjects">
+                    <h1>Current Projects</h1>
                     <div className="projectCardContainer">
-                        {Projects.map((project) => (
-                            <PortalExample key={project.id} project={project} />
+                        {currentProjects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>
-                )}
-            </div>
-
-            <div id="oldProjects">
-                <h1>Previous Projects</h1>
-                {fetchError && <p>{fetchError}</p>}
-                {Projects && (
+                </div>
+            )}
+            {prevProjects && (
+                <div id="oldProjects">
+                    <h1>Previous Projects</h1>
                     <div className="projectCardContainer">
-                        {Projects.map((project) => (
-                            <OldProjectCard key={project.id} project={project} />
+                        {prevProjects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchMembers, fetchBoardMembers } from '../db/db';
+import LoadingAnimation from '../components/loadingAnimation/loadingAnimation';
 import LeaderCard from '../components/leaderCard/leaderCard';
 import TeamLeadCard from '../components/teamLeadCard/teamLeadCard';
 import MemberCard from '../components/memberCard/memberCard';
@@ -26,11 +27,12 @@ const MeetTheTeam = () => {
         fetchBoardMembersData();
     }, []);
 
-
     return (
-        
         <div className="page MeetTheTeam">
-            <h1>Meet The Board</h1>
+            <div className='textBlurb'>
+                <h1>Meet The Board</h1>
+                <p>There will be text here mayhaps</p>
+            </div>
             <div id="boardMemberContainer">
                 {boardMembers ? (
                     <div className="boardMemberCardContainer">
@@ -38,7 +40,7 @@ const MeetTheTeam = () => {
                             <BoardMemberCard boardMember={boardMember} />
                         ))}
                     </div>
-                ) : (<h1>Loading...</h1>)}
+                ) : (<LoadingAnimation />)}
             </div>
             <div className="textBlurb">
                 <h1>Meet the Team</h1>
@@ -56,20 +58,24 @@ const MeetTheTeam = () => {
                 <center>
                     <div id="leadership">
                         <h2>Leadership</h2>
-                        <div className="leaderCardContainer">
-                            {members.map((member) => (
-                                <LeaderCard key={member.id} member={member} />
-                            ))}
-                        </div>
+                        {members ? (
+                            <div className="leaderCardContainer">
+                                {members.map((member) => (
+                                    <LeaderCard key={member.id} member={member} />
+                                ))}
+                            </div>
+                        ) : (<LoadingAnimation />)}
                     </div>
 
                     <div id="teamLeads">
                         <h2>Team Leads</h2>
-                        <div className="teamLeadCardContainer">
-                            {members.map((member) => (
-                                <TeamLeadCard key={member.id} member={member} />
-                            ))}
-                        </div>
+                        {members ? (
+                            <div className="teamLeadCardContainer">
+                                {members.map((member) => (
+                                    <TeamLeadCard key={member.id} member={member} />
+                                ))}
+                            </div>
+                        ) : (<LoadingAnimation />)}
                     </div>
                     
                     <div id="otherMembers">
