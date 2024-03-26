@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCards/ProjectCard';
 
 const Projects = () => {
     const [projects, setProjects] = useState(null);
+    const [openModalId, setOpenModalId] = useState(null); // State to track open modal ID
 
     useEffect(() => {
         const fetchProjectsData = async () => {
@@ -14,12 +15,14 @@ const Projects = () => {
         fetchProjectsData();
     }, []);
 
-        const currentProjects = projects && projects.filter(project =>
-            project.yearFinished === -1
-        );
-        const prevProjects = projects && projects.filter(project =>
-            project.yearFinished !== -1
-        );
+    // Function to toggle modal state and set open modal ID
+    const handleToggleModal = (projectId) => {
+        setOpenModalId(openModalId === projectId ? null : projectId);
+    };
+
+    // Filter current and previous projects
+    const currentProjects = projects && projects.filter((project) => project.yearFinished === -1);
+    const prevProjects = projects && projects.filter((project) => project.yearFinished !== -1);
 
     return (
         <div className="page projects">
@@ -37,7 +40,12 @@ const Projects = () => {
                     <h1>Current Projects</h1>
                     <div className="projectCardContainer">
                         {currentProjects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                isOpen={openModalId === project.id} // Pass isOpen prop
+                                onToggleModal={handleToggleModal} // Pass onToggleModal function
+                            />
                         ))}
                     </div>
                 </div>
@@ -47,7 +55,12 @@ const Projects = () => {
                     <h1>Previous Projects</h1>
                     <div className="projectCardContainer">
                         {prevProjects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                isOpen={openModalId === project.id} // Pass isOpen prop
+                                onToggleModal={handleToggleModal} // Pass onToggleModal function
+                            />
                         ))}
                     </div>
                 </div>
