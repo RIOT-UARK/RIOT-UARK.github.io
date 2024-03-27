@@ -1,3 +1,5 @@
+import CloseButton from "../closeButton/CloseButton";
+
 export default function ModalContent({ project, onClose }) {
     const handleModalClick = (event) => {
         // Prevent event propagation to parent elements
@@ -6,6 +8,7 @@ export default function ModalContent({ project, onClose }) {
 
     return (
         <div className="modal" onClick={handleModalClick}>
+            <CloseButton onClose={onClose} />
             <center>
                 <img className="projectImage" src={project.image_url} alt="Placeholder" width="300" height="200" />
             </center>
@@ -13,9 +16,6 @@ export default function ModalContent({ project, onClose }) {
                 <p>{project.name}</p>
                 <p>{project.projectDesc}</p>
             </div>
-            <center>
-                <button onClick={onClose}>Close</button>
-            </center>
         </div>
     );
 }
