@@ -20,5 +20,18 @@ const images = [
         projectDesc:
             'This robot was created by RIOT members partnered with a senior design team of computer science students. It went on to the Spring 2023 IEEE competition and won third place. The robot autonomously used computer vision to navigate a maze.',
     },
+    {
+        id: 4,
+        src: 'Projects/Hex.jpg',
+        alt: 'Hex',
+        projectDesc:
+            'HEX is a robot designed by RIOT President Ben Burdess to spark innovation and inspiration for all the bots to follow it.',
+    },
+    {
+        id: 5,
+        src: 'RIOT Logo.png',
+        alt: 'Strawberry Picking Robot',
+        projectDesc: 'A robot made for a competition in collaboration with the Ag Sci department.',
+    },
 ];
 export default images;
