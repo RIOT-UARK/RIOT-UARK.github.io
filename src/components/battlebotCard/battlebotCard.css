@@ -1,0 +1,8 @@
+.battlebotCard {
+    box-shadow: var(--lightShadow);
+    width: 300px;
+    height: 125px;
+    padding: 5px 20px 0px 20px;
+    margin: 3%;
+    text-align: center;
+}

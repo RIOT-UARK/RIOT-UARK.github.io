@@ -1,4 +1,4 @@
-import { fetchProjects } from '../db/db';
+import { fetchProjects } from '../utils/fetchProjects';
 import { useEffect, useState } from 'react';
 
 import ProjectCard from '../components/ProjectCards/ProjectCard';

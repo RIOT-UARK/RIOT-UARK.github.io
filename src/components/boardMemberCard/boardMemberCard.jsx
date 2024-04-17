@@ -3,7 +3,7 @@ const BoardMemberCard = ({ boardMember }) => {
         return (
             <div className="boardMemberCard">
                 <img
-                    class="boardMemberPortrait"
+                    className="boardMemberPortrait"
                     src={boardMember.image_url}
                     alt={(boardMember.firstName, boardMember.lastName)}
                 />

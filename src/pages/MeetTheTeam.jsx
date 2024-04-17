@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchMembers, fetchBoardMembers } from '../db/db';
+import { fetchMembers } from '../utils/fetchMembers';
+import { fetchBoardMembers} from '../utils/fetchBoardMembers'
 import LoadingAnimation from '../components/loadingAnimation/loadingAnimation';
 import LeaderCard from '../components/leaderCard/leaderCard';
 import TeamLeadCard from '../components/teamLeadCard/teamLeadCard';
@@ -12,19 +13,12 @@ const MeetTheTeam = () => {
     const [boardMembers, setBoardMembers] = useState(null);
 
     useEffect(() => {
-        const fetchMembersData = async () => {
-            const members = await fetchMembers();
-            setMembers(members);
-        };
-        fetchMembersData();
-    }, []);
-
-    useEffect(() => {
-        const fetchBoardMembersData = async () => {
-            const bmembers = await fetchBoardMembers();
-            setBoardMembers(bmembers);
-        };
-        fetchBoardMembersData();
+        (async () => {
+                    const members = await fetchMembers();
+                    setMembers(members);
+                    const bmembers = await fetchBoardMembers();
+                    setBoardMembers(bmembers);
+        })()
     }, []);
 
     return (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchMembers } from '../../db/db';
+import { fetchMembers } from '../../utils/fetchMembers';
 import { BsDiscord as Discord, BsInstagram as Instagram, BsTwitter as Twitter, BsLinkedin as LinkedIn } from 'react-icons/bs';
 
 const Footer = () => {
@@ -28,12 +28,12 @@ const Footer = () => {
             <div style={{ margin: '10px 0' }}>
                 {president && (
                     president.map((president =>
-                        <span>{president.first_name} {president.last_name} (President): {president.email} | </span>
+                        <span key={president.id}>{president.first_name} {president.last_name} (President): {president.email} | </span>
                     ))
                 )}
                 {vicePresident && (
                     vicePresident.map((vicePresident =>
-                        <span>{vicePresident.first_name} {vicePresident.last_name} (Vice President): {vicePresident.email}</span>
+                        <span key={vicePresident.id}>{vicePresident.first_name} {vicePresident.last_name} (Vice President): {vicePresident.email}</span>
                     ))
                 )}
             </div>

@@ -1,3 +1,4 @@
+import './battlebotSeasonCard.css'
 const BattlebotSeasonCard = ({ prevSemesters }) => {
     for (let i = 0; i <= prevSemesters.length; i++) {
         return (

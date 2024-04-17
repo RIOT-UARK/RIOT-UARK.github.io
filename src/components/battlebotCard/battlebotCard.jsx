@@ -1,3 +1,4 @@
+import './battlebotCard.css'
 const BattlebotCard = ({ battlebot, currentSemester }) => {
     if (battlebot.semester == currentSemester) {
         return (

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useEffect, useState } from 'react';
-import { fetchProjects } from '../../db/db';
+import { fetchProjects } from '../../utils/fetchProjects';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
