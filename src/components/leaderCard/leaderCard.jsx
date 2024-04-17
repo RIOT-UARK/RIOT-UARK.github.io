@@ -1,3 +1,4 @@
+import './leaderCard.css'
 import { useEffect, useState } from 'react';
 import { FaUser, FaUserAstronaut } from 'react-icons/fa';
 

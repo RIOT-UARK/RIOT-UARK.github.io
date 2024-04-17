@@ -1,0 +1,150 @@
+#carouselContent img {
+    max-height: 450px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 10px;
+    padding: 25px;
+}
+
+#carouselContent p {
+    font-size: 20px;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.Containers {
+    display: none;
+}
+
+.innerSlide {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+#carousel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: ease 0.3s;
+}
+
+#carousel-button:hover {
+    color: var(--navy);
+    transition: ease 0.3s;
+}
+
+/* Specific to left arrow */
+#carousel-button:nth-child(1) {
+    left: -50px;
+}
+
+#carousel-button:nth-child(1):hover {
+    transform: translate(-5px, -50%) scale(1.1);
+}
+
+/* Specific to right arrow */
+#carousel-button:nth-child(3) {
+    right: -50px;
+}
+
+#carousel-button:nth-child(3):hover {
+    transform: translate(5px, -50%) scale(1.1);
+}
+
+.Back,
+.forward {
+    cursor: pointer;
+    position: absolute;
+    top: 48%;
+    width: auto;
+    margin-top: -23px;
+    padding: 17px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 19px;
+    transition: 0.4s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    background-color: var(--navy);
+}
+
+.forward {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.Info {
+    color: var(--white);
+    font-size: 16px;
+    padding: 10px 14px;
+    position: relative;
+    height: 200px;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--navy);
+}
+
+.dots {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 3px;
+    background-color: var(--lightGrey);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.enable,
+.dots:hover {
+    background-color: var(--navy);
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.4s;
+    animation-name: fade;
+    animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 2;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 2;
+    }
+}

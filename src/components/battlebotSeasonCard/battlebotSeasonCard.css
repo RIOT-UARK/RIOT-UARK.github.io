@@ -1,0 +1,17 @@
+.battlebotSeasonCard {
+    box-shadow: var(--lightShadow);
+    width: 150px;
+    height: 100px;
+    float: center;
+    margin: 3%;
+    text-align: center;
+    padding: 10px 40px 0px 40px;
+}
+
+.battlebotSeasonCardContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    margin-left: -20px;
+    margin-right: -20px;
+}

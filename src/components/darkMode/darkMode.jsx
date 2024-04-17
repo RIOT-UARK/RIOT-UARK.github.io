@@ -1,3 +1,4 @@
+import './darkMode.css'
 import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 

@@ -1,3 +1,4 @@
+import './projectCarousel.css'
 const CarouselCore = ({ project }) => {
 	return (
 		<div id="carouselContent" key={project.id}>

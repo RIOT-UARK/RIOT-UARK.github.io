@@ -1,3 +1,4 @@
+import './boardMemberCard.css'
 const BoardMemberCard = ({ boardMember }) => {
     if (boardMember.active === true) {
         return (

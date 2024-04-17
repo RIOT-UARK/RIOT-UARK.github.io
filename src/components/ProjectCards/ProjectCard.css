@@ -1,0 +1,9 @@
+.projectCard {
+    margin: 5px;
+    border: 1px solid var(--lightGrey);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: var(--lightShadow);
+    width: 301.6px;
+    float: left;
+}
