@@ -1,3 +1,7 @@
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import ModalContent from '../ModalContent/ModalContent';
+
 const BattlebotSeasonCard = ({ prevSemesters }) => {
     for (let i = 0; i <= prevSemesters.length; i++) {
         return (

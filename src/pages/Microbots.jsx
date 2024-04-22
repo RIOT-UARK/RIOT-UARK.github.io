@@ -1,17 +1,13 @@
 import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
+import { fetchBattlebots } from '../db/db';
 
 import BattlebotCard from '../components/battlebotCard/battlebotCard';
 
-function GetEmail({ email, position }) {
-    if (position === 'President') {
-        return <p>Contact our president at {email}</p>;
-    }
-}
 
 function ToggleSignup({ offSeason, formLink }) {
     if (offSeason) {
-        return <h2 id="SignUpUnavailable">SIGN-UP UNAVAILABLE</h2>;
+        return <h2 id="SignUpUnavailable">SIGN-UP AVAILABLE FALL 2024</h2>;
     } else {
         return (
             <h2>
@@ -44,12 +40,26 @@ function ThisSeason({ Battlebots, currentSemester }) {
 }
 
 function PrevSemesterButtons() {
-    const prevSemesters = ['Fall 2022', 'Spring 2023'];
+    const prevSemesters = ['Fall 2022', 'Spring 2023', 'Fall 2023'];
 
     const list = prevSemesters.map((semester) => (
         <div key={semester}>
             <div className="battlebotSeasonCard">
                 <h3>{semester}</h3>
+            </div>
+        </div>
+    ));
+
+    return <>{list}</>;
+}
+
+function ThisSemesterButtons() {
+    const nextTime = ['RIOT will be back hosting Microbots next Semester'];
+
+    const list = nextTime.map((nextTime) => (
+        <div key={nextTime}>
+            <div className="battlebotNextSeasonCard">
+                <h3>{nextTime}</h3>
             </div>
         </div>
     ));
@@ -65,7 +75,7 @@ const Microbots = () => {
     ////////////////////////////////////////////////////
     //Manually change these as needed
     //Can't think of a good way to do it automatically
-    const currentSemester = 'Fall 2023';
+    const currentSemester = 'Spring 2023';
     const offSeason = true;
     const formLink = 'https://www.youtube.com/@Ayden3D';
     ////////////////////////////////////////////////////
@@ -133,41 +143,29 @@ const Microbots = () => {
             </div>
             <center>
                 <div>
-                    <h2>How to Support</h2>
-                    <p>
-                        To support the microbots competition, or fund a specific student's robot, please contact us at
-                        robotics@uark.edu
-                    </p>
-                </div>
-                <div>
-                    <h2>Questions?</h2>
-                    {fetchError && <p>{fetchError}</p>}
-                    {Members.map((member) => (
-                        <GetEmail key={member.id} email={member.email} position={member.position} />
-                    ))}
+                    <h2>Want to support us or have questions?</h2>
+                    <p>Please contact robotics@uark.edu</p>
                 </div>
             </center>
 
-            <div>
+            <div id="nextSemesters">
+                <h1>This Season</h1>
+
                 <center>
-                    {/* <h1>This Season</h1> */}
-                    {/* <ThisSeason key={Battlebots.id} Battlebots={Battlebots} currentSemester={currentSemester}/> */}
-                    {/* {fetchError && (<p>{fetchError}</p>)}
-				{Battlebots && (
-					<div className = "battlebotCardContainer">
-						{Battlebots.map(battlebot => (
-							<ThisSeason key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester}/>
-						))}
-					</div>
-				)} */}
+                    <div className="battlebotNextSeasonCardContainer">
+                        <ThisSemesterButtons />
+                    </div>
                 </center>
             </div>
-            {/* <div id = "prevSemesters">
-				<h1>Previous Seasons</h1>
-				<div className = "battlebotSeasonCardContainer">
-					<PrevSemesterButtons/>
-				</div>
-			</div> */}
+
+            <div id="prevSemesters">
+                <h1>Previous Seasons</h1>
+                <center>
+                    <div className="battlebotSeasonCardContainer">
+                        <PrevSemesterButtons />
+                    </div>
+                </center>
+            </div>
         </div>
     );
 };
