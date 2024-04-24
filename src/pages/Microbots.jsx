@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { fetchBattlebots } from '../db/db';
 
 import BattlebotCard from '../components/battlebotCard/battlebotCard';
+import BattlebotSeasonCard from '../components/battlebotSeasonCard/battlebotSeasonCard';
 
 
 function ToggleSignup({ offSeason, formLink }) {
@@ -39,20 +40,7 @@ function ThisSeason({ Battlebots, currentSemester }) {
 	)} */
 }
 
-function PrevSemesterButtons() {
-    const prevSemesters = ['Fall 2022', 'Spring 2023', 'Fall 2023'];
-
-    const list = prevSemesters.map((semester) => (
-        <div key={semester}>
-            <div className="battlebotSeasonCard">
-                <h3>{semester}</h3>
-            </div>
-        </div>
-    ));
-
-    return <>{list}</>;
-}
-
+//This really doesn't need to be defined seperatley. Will try and integrate into main function
 function ThisSemesterButtons() {
     const nextTime = ['RIOT will be back hosting Microbots next Semester'];
 
@@ -71,13 +59,15 @@ const Microbots = () => {
     const [fetchError, setFetchError] = useState(null);
     const [Battlebots, setBattlebots] = useState(null);
     const [Members, setMembers] = useState([]);
+    const [openPopupId, setOpenPopupId] = useState(null); // State to track open popup ID
+    const prevSemesters = ['Fall 2022', 'Spring 2023', 'Fall 2023']; //Temporary hardcoded array
 
     ////////////////////////////////////////////////////
     //Manually change these as needed
-    //Can't think of a good way to do it automatically
-    const currentSemester = 'Spring 2023';
+    //Can't think of a good way to do it automatically. Maybe config page in future?
+    const currentSemester = 'Spring 2024';
     const offSeason = true;
-    const formLink = 'https://www.youtube.com/@Ayden3D';
+    const formLink = 'https://www.youtube.com/@Ayden3D'; //Placeholder link, subscribe to Ayden though
     ////////////////////////////////////////////////////
 
     useEffect(() => {
@@ -111,6 +101,11 @@ const Microbots = () => {
         };
         fetchMembers();
     }, []);
+
+    // Function to toggle popup state and set open popup ID
+    const handleTogglePopup = (semester) => {
+        setOpenPopupId(openPopupId === semester ? null : semester);
+    };
 
     return (
         <div className="page microbots">
@@ -161,8 +156,16 @@ const Microbots = () => {
             <div id="prevSemesters">
                 <h1>Previous Seasons</h1>
                 <center>
-                    <div className="battlebotSeasonCardContainer">
-                        <PrevSemesterButtons />
+                    <div className='battlebotSeasonCardContainer'>
+                        {prevSemesters && (
+                            prevSemesters.map((semester) => (
+                                <BattlebotSeasonCard
+                                    semester={semester}
+                                    isOpen={openPopupId === semester} // Pass isOpen prop
+                                    onTogglePopup={handleTogglePopup} // Pass onTogglePopup function
+                                />
+                            ))
+                        )}
                     </div>
                 </center>
             </div>

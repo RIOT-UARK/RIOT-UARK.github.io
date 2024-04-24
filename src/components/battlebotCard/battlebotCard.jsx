@@ -1,3 +1,5 @@
+import { fetchBattlebots } from "../../db/db";
+
 const BattlebotCard = ({ battlebot, currentSemester }) => {
     if (battlebot.semester == currentSemester) {
         return (

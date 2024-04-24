@@ -56,7 +56,7 @@ const Footer = () => {
 
             <div style={{ fontSize: '12px', marginTop: '10px' }}>
                 <p>Powered by Supabase</p>
-                <p>RIOT 2024, authored by Ben Fletcher and Jackson Baker</p>
+                <p>&copy; RIOT Website Team 2024</p>
             </div>
         </footer>
     );
