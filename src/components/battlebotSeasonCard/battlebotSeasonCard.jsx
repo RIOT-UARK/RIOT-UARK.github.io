@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import BattlebotsSeasonPopUp from '../battlebotsPopUp/battlebotsPopUp';
+import BattlebotsSeasonPopUp from '../battlebotsPopUp/battlebotsSeasonPopUp';
 
 const BattlebotSeasonCard = ({ semester, isOpen, onTogglePopup }) => {
     

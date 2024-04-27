@@ -1,10 +1,8 @@
-import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
 import { fetchBattlebots } from '../db/db';
 
 import BattlebotCard from '../components/battlebotCard/battlebotCard';
 import BattlebotSeasonCard from '../components/battlebotSeasonCard/battlebotSeasonCard';
-
 
 function ToggleSignup({ offSeason, formLink }) {
     if (offSeason) {
@@ -21,7 +19,7 @@ function ToggleSignup({ offSeason, formLink }) {
 }
 
 function ThisSeason({ Battlebots, currentSemester }) {
-    /* {fetchError && (<p>{fetchError}</p>)}
+    /*  {fetchError && (<p>{fetchError}</p>)}
 	{Battlebots && (
 		if(currentSemester != "Spring 2023") {
 			return(
@@ -38,6 +36,13 @@ function ThisSeason({ Battlebots, currentSemester }) {
 			);
 		}
 	)} */
+    return (
+        <div className="battlebotCardContainer">
+            {Battlebots.map((battlebot) => (
+                <BattlebotCard key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester} />
+            ))}
+        </div>
+    );
 }
 
 //This really doesn't need to be defined seperatley. Will try and integrate into main function
@@ -56,50 +61,27 @@ function ThisSemesterButtons() {
 }
 
 const Microbots = () => {
-    const [fetchError, setFetchError] = useState(null);
     const [Battlebots, setBattlebots] = useState(null);
-    const [Members, setMembers] = useState([]);
     const [openPopupId, setOpenPopupId] = useState(null); // State to track open popup ID
     const prevSemesters = ['Fall 2022', 'Spring 2023', 'Fall 2023']; //Temporary hardcoded array
 
     ////////////////////////////////////////////////////
     //Manually change these as needed
     //Can't think of a good way to do it automatically. Maybe config page in future?
-    const currentSemester = 'Spring 2024';
+    const currentSemester = 'Spring 2023';
     const offSeason = true;
     const formLink = 'https://www.youtube.com/@Ayden3D'; //Placeholder link, subscribe to Ayden though
     ////////////////////////////////////////////////////
 
+    const currentSeasonBots = Battlebots && Battlebots.filter((battlebot) => battlebot.semester === currentSemester);
+
     useEffect(() => {
-        const fetchBattlebots = async () => {
-            const { data, error } = await supabase.from('Battlebots').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch battlebot data');
-                console.log(error);
-                setBattlebots(null);
-            }
-            if (data) {
-                setBattlebots(data);
-                setFetchError(null);
-            }
+        const fetchBattlebotsData = async () => {
+            const battlebots = await fetchBattlebots();
+            setBattlebots(battlebots);
         };
-        fetchBattlebots();
-
-        const fetchMembers = async () => {
-            const { data, error } = await supabase.from('Members').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch member data');
-                console.log(error);
-                setMembers(null);
-            }
-            if (data) {
-                setMembers(data);
-                setFetchError(null);
-            }
-        };
-        fetchMembers();
+        fetchBattlebotsData();
+        //fetchBattlebots();
     }, []);
 
     // Function to toggle popup state and set open popup ID
@@ -148,7 +130,12 @@ const Microbots = () => {
 
                 <center>
                     <div className="battlebotNextSeasonCardContainer">
-                        <ThisSemesterButtons />
+                        {/*<ThisSemesterButtons />*/}
+                        {currentSeasonBots &&
+                            currentSeasonBots.map((battlebot) => (
+                                <BattlebotCard key={battlebot.id} 
+                                battlebot={battlebot} />
+                            ))}
                     </div>
                 </center>
             </div>
@@ -156,16 +143,15 @@ const Microbots = () => {
             <div id="prevSemesters">
                 <h1>Previous Seasons</h1>
                 <center>
-                    <div className='battlebotSeasonCardContainer'>
-                        {prevSemesters && (
+                    <div className="battlebotSeasonCardContainer">
+                        {prevSemesters &&
                             prevSemesters.map((semester) => (
                                 <BattlebotSeasonCard
                                     semester={semester}
                                     isOpen={openPopupId === semester} // Pass isOpen prop
                                     onTogglePopup={handleTogglePopup} // Pass onTogglePopup function
                                 />
-                            ))
-                        )}
+                            ))}
                     </div>
                 </center>
             </div>
