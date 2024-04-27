@@ -1,30 +1,64 @@
 import {useEffect, useState} from 'react';
 import { fetchBattlebots } from '../../db/db';
 import CloseButton from '../closeButton/CloseButton';
+import BattlebotCard from '../battlebotCard/battlebotCard';
 
-export default function BattlebotsSeasonPopUp({ semester, onClose }) {
-    //const [battlebots, setBattlebots] = useState(null);
+export default function BattlebotsSeasonPopUp({ semester, onClose, isOpen, onTogglePopup }) {
+    const [battlebots, setBattlebots] = useState(null);
+    const [showPopup, setShowPopup] = useState(isOpen);
 
-    /*useEffect(() => {
+    useEffect(() => {
         const fetchBattlebotsData = async () => {
             const battlebots = await fetchBattlebots();
             setBattlebots(battlebots);
         };
         fetchBattlebotsData();
-    }, []);*/
+    }, []);
     
-    const handlePopUpClick = (event) => {
-        // Prevent event propagation to parent elements
-        event.stopPropagation();
+    useEffect(() => {
+        setShowPopup(isOpen);
+    }, [isOpen]);
+
+    const handlePopupClose = () => {
+        setShowPopup(false);
     };
+
+    useEffect(() => {
+        const handleClickOutsidePopup = (event) => {
+            if (showPopup && event.target.closest('.popup') === null) {
+                handlePopupClose();
+            }
+        };
+
+        document.addEventListener('click', handleClickOutsidePopup);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutsidePopup);
+        };
+    }, [showPopup]);
+
+    const handleCardClick = () => {
+        onTogglePopup(semester);
+    };
+
+    const prevBattlebots = battlebots && battlebots.filter((battlebot) => battlebot.semester == semester);
 
     return (
         <center>
-            <div className="modal" onClick={handlePopUpClick}>
+            <div className="popup" onClick={handleCardClick}>
                 <CloseButton onClose={onClose} />
                 <div className="desc">
                     <h1>{semester}</h1>
-                    <p>Sample text</p>
+                    <div className="battlebotCardContainer">
+                        {prevBattlebots && (
+                            prevBattlebots.map((battlebot) => (
+                                <BattlebotCard
+                                    key={battlebot.id}
+                                    battlebot={battlebot}
+                                />
+                            ))
+                        )}
+                    </div>
                 </div>
             </div>
         </center>

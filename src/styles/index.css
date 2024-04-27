@@ -594,28 +594,6 @@ div.desc {
     cursor: pointer;
 }
 
-.moda {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.moda-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
 /* Caption of Modal Image */
 #caption {
     margin: auto;
@@ -629,7 +607,6 @@ div.desc {
 }
 
 /* Add Animation */
-.moda-content,
 #caption {
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -791,29 +768,42 @@ div.desc {
 /*---------------------------------------*/
 .battlebotCard {
     box-shadow: var(--lightShadow);
+    background-color: var(--background-color);
     width: 300px;
     height: 125px;
+    border-radius: 10px;
     padding: 5px 20px 0px 20px;
     margin: 3%;
     text-align: center;
 }
 
+/*.battlebotCard:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}*/
+
 .battlebotCardContainer {
-    display: flex;
+    display: grid;
     justify-content: space-evenly;
-    
+    grid-template-columns: auto auto auto;
 }
 
 .battlebotSeasonCard {
     box-shadow: var(--lightShadow);
     width: 150px;
     height: 100px;
+    border-radius: 10px;
     float: center;
     margin: 3%;
     text-align: center;
     padding: 10px 40px 0px 40px;
     display: grid;
     justify-content: space-evenly;
+}
+
+.battlebotSeasonCard:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .battlebotNextSeasonCard {
@@ -897,7 +887,7 @@ div.desc {
     /*.teamLeadCardContainer,       Only 3 teams right now*/
     .memberCardContainer,
     .battlebotCardContainer {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
     }
     .teamLeadCardContainer {
         grid-template-columns: auto auto auto;
@@ -992,9 +982,6 @@ div.desc {
     }
 }
 @media only screen and (max-width: 700px) {
-    .moda-content {
-        width: 100%;
-    }
     .battlebotSeasonCardContainer {
         grid-template-columns: auto auto;
     }
@@ -1094,6 +1081,21 @@ div.desc {
 }
 
 .modal {
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background-color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    position: fixed;
+    --modalWidth: 80%;
+    width: var(--modalWidth);
+    top: 70px;
+    bottom: 300px;
+    left: calc(50% - var(--modalWidth) / 2);
+}
+
+.popup {
     justify-content: space-evenly;
     align-items: center;
     box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
