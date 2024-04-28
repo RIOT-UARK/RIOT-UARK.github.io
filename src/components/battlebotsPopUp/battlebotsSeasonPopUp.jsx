@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { fetchBattlebots } from '../../db/db';
 import CloseButton from '../closeButton/CloseButton';
 import BattlebotCard from '../battlebotCard/battlebotCard';
@@ -14,7 +14,7 @@ export default function BattlebotsSeasonPopUp({ semester, onClose, isOpen, onTog
         };
         fetchBattlebotsData();
     }, []);
-    
+
     useEffect(() => {
         setShowPopup(isOpen);
     }, [isOpen]);
@@ -49,15 +49,11 @@ export default function BattlebotsSeasonPopUp({ semester, onClose, isOpen, onTog
                 <CloseButton onClose={onClose} />
                 <div className="desc">
                     <h1>{semester}</h1>
-                    <div className="battlebotCardContainer">
-                        {prevBattlebots && (
+                    <div className="battlebotCardContainer" style={{ maxHeight: '700px', overflowY: 'auto' }}>
+                        {prevBattlebots &&
                             prevBattlebots.map((battlebot) => (
-                                <BattlebotCard
-                                    key={battlebot.id}
-                                    battlebot={battlebot}
-                                />
-                            ))
-                        )}
+                                <BattlebotCard key={battlebot.id} battlebot={battlebot} />
+                            ))}
                     </div>
                 </div>
             </div>

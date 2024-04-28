@@ -786,6 +786,8 @@ div.desc {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto auto;
+    top: 70px;
+    height: var(--modalHeight)
 }
 
 .battlebotSeasonCard {
@@ -1090,6 +1092,8 @@ div.desc {
     position: fixed;
     --modalWidth: 80%;
     width: var(--modalWidth);
+    --modalHeight: 80%;
+    height: var(--modalHeight);
     top: 70px;
     bottom: 300px;
     left: calc(50% - var(--modalWidth) / 2);
@@ -1105,8 +1109,9 @@ div.desc {
     position: fixed;
     --modalWidth: 80%;
     width: var(--modalWidth);
+    
     top: 70px;
-    bottom: 300px;
+    bottom: 100px;
     left: calc(50% - var(--modalWidth) / 2);
 }
 
