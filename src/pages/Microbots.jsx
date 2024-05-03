@@ -18,48 +18,6 @@ function ToggleSignup({ offSeason, formLink }) {
     }
 }
 
-function ThisSeason({ Battlebots, currentSemester }) {
-    /*  {fetchError && (<p>{fetchError}</p>)}
-	{Battlebots && (
-		if(currentSemester != "Spring 2023") {
-			return(
-				<p>No competitors have signed up yet. Stay tuned!</p>
-			);
-		}
-		else {
-			return(
-				<div className = "battlebotCardContainer">
-					{Battlebots.map(battlebot => (
-						<BattlebotCard key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester}/>
-					))}
-				</div>
-			);
-		}
-	)} */
-    return (
-        <div className="battlebotCardContainer">
-            {Battlebots.map((battlebot) => (
-                <BattlebotCard key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester} />
-            ))}
-        </div>
-    );
-}
-
-//This really doesn't need to be defined seperatley. Will try and integrate into main function
-function ThisSemesterButtons() {
-    const nextTime = ['RIOT will be back hosting Microbots next Semester'];
-
-    const list = nextTime.map((nextTime) => (
-        <div key={nextTime}>
-            <div className="battlebotNextSeasonCard">
-                <h3>{nextTime}</h3>
-            </div>
-        </div>
-    ));
-
-    return <>{list}</>;
-}
-
 const Microbots = () => {
     const [Battlebots, setBattlebots] = useState(null);
     const [openPopupId, setOpenPopupId] = useState(null); // State to track open popup ID
@@ -68,12 +26,12 @@ const Microbots = () => {
     ////////////////////////////////////////////////////
     //Manually change these as needed
     //Can't think of a good way to do it automatically. Maybe config page in future?
-    const currentSemester = 'Spring 2023';
+    const currentSemester = 'Spring 2024';
     const offSeason = true;
     const formLink = 'https://www.youtube.com/@Ayden3D'; //Placeholder link, subscribe to Ayden though
     ////////////////////////////////////////////////////
 
-    const currentSeasonBots = Battlebots && Battlebots.filter((battlebot) => battlebot.semester === currentSemester);
+    const currentSeasonBots = Battlebots && Battlebots.filter((battlebot) => battlebot.semester == currentSemester);
 
     useEffect(() => {
         const fetchBattlebotsData = async () => {
@@ -81,7 +39,6 @@ const Microbots = () => {
             setBattlebots(battlebots);
         };
         fetchBattlebotsData();
-        //fetchBattlebots();
     }, []);
 
     // Function to toggle popup state and set open popup ID
@@ -95,7 +52,7 @@ const Microbots = () => {
                 <h1>Microbots</h1>
                 <p>
                     As part of RIOT's vision, every year, we host a microbots competition where students new to robotics
-                    pilot small robots in a variety of different competitive events. We’ve hosted each previous semester
+                    pilot small robots in a variety of different competitive events. We've hosted each previous semester
                     two separate battle bot tournaments where students build a plastic, 3D printed, remote controlled
                     battle bot in a competition to fight and survive against another designs. Our winners receive
                     special awards as the crowned champion of the microbots tournament each time a competition is
@@ -125,18 +82,21 @@ const Microbots = () => {
                 </div>
             </center>
 
-            <div id="nextSemesters">
+            <div id="thisSemester">
                 <h1>This Season</h1>
-
                 <center>
-                    <div className="battlebotNextSeasonCardContainer">
-                        {/*<ThisSemesterButtons />*/}
-                        {currentSeasonBots &&
-                            currentSeasonBots.map((battlebot) => (
-                                <BattlebotCard key={battlebot.id} 
-                                battlebot={battlebot} />
+                    {currentSeasonBots && currentSeasonBots.length > 0 ? (
+                        <div className="battlebotThisSeasonCardContainer">
+                            {currentSeasonBots.map((battlebot) => (
+                                <BattlebotCard
+                                    key={battlebot.id}
+                                    battlebot={battlebot}
+                                />
                             ))}
-                    </div>
+                        </div>
+                    ) : (
+                        <p id="nextSemesterBlurb">RIOT will be back next semester hosting battlebots. Stay tuned!</p>
+                    )}
                 </center>
             </div>
 
@@ -144,14 +104,16 @@ const Microbots = () => {
                 <h1>Previous Seasons</h1>
                 <center>
                     <div className="battlebotSeasonCardContainer">
-                        {prevSemesters &&
+                        {prevSemesters && (
                             prevSemesters.map((semester) => (
                                 <BattlebotSeasonCard
+                                    key={semester}
                                     semester={semester}
                                     isOpen={openPopupId === semester} // Pass isOpen prop
                                     onTogglePopup={handleTogglePopup} // Pass onTogglePopup function
                                 />
-                            ))}
+                            ))
+                        )}
                     </div>
                 </center>
             </div>

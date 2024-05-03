@@ -808,7 +808,7 @@ div.desc {
     cursor: pointer;
 }
 
-.battlebotNextSeasonCard {
+/*.battlebotNextSeasonCard {
     box-shadow: var(--lightShadow);
     width: 350px;
     height: 150px;
@@ -817,7 +817,7 @@ div.desc {
     text-align: center;
     padding: 10px 40px 0px 40px;
     border-radius: 10px;
-}
+}*/
 
 .battlebotSeasonCardContainer {
     display: flex;
@@ -837,10 +837,12 @@ div.desc {
     padding: 10px 40px 0px 40px;
 }
 
-.battlebotNextSeasonCardContainer {
+.battlebotThisSeasonCardContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
     justify-content: space-evenly;
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -20%;
+    margin-right: -20%;
 }
 
 #prevSemesters {
@@ -849,12 +851,16 @@ div.desc {
     margin-right: 20%;
 }
 
-#nextSemesters {
+#thisSemester {
     border-radius: 10px;
     padding-top: 50px;
     padding-bottom: 10px;
     margin-left: 20%;
     margin-right: 20%;
+}
+
+#nextSemesterBlurb {
+    float: center;
 }
 
 /*---------------------------------------*/
@@ -987,7 +993,7 @@ div.desc {
     .battlebotSeasonCardContainer {
         grid-template-columns: auto auto;
     }
-    .battlebotNextSeasonCardContainer {
+    .battlebotThisSeasonCardContainer {
         grid-template-columns: auto auto;
     }
     #prevSemesters {
@@ -1060,7 +1066,7 @@ div.desc {
     .battlebotSeasonCardContainer {
         grid-template-columns: auto;
     }
-    .battlebotNextSeasonCardContainer {
+    .battlebotThisSeasonCardContainer {
         grid-template-columns: auto;
     }
     #prevSemesters {
