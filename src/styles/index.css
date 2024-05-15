@@ -777,17 +777,12 @@ div.desc {
     text-align: center;
 }
 
-/*.battlebotCard:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}*/
-
 .battlebotCardContainer {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto auto;
     top: 70px;
-    height: var(--modalHeight)
+    height: var(--modalHeight);
 }
 
 .battlebotSeasonCard {
@@ -807,17 +802,6 @@ div.desc {
     opacity: 0.7;
     cursor: pointer;
 }
-
-/*.battlebotNextSeasonCard {
-    box-shadow: var(--lightShadow);
-    width: 350px;
-    height: 150px;
-    float: center;
-    margin: 3%;
-    text-align: center;
-    padding: 10px 40px 0px 40px;
-    border-radius: 10px;
-}*/
 
 .battlebotSeasonCardContainer {
     display: flex;
@@ -995,6 +979,10 @@ div.desc {
     }
     .battlebotThisSeasonCardContainer {
         grid-template-columns: auto auto;
+    }
+
+    .battlebotCardContainer {
+        grid-template-columns: auto;
     }
     #prevSemesters {
         margin-left: 20%;

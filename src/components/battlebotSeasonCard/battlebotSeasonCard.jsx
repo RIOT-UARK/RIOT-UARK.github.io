@@ -42,7 +42,7 @@ const BattlebotSeasonCard = ({ semester, isOpen, onTogglePopup }) => {
             <div className="battlebotSeasonCard">
                 <h3>{semester}</h3>
             </div>
-            {showPopup && createPortal(<BattlebotsSeasonPopUp semester={semester} onClose={handlePopupClose} onTogglePopup={handleTogglePopup}/>, document.body)}
+            {showPopup && createPortal(<BattlebotsSeasonPopUp currSemester={semester} onClose={handlePopupClose} onTogglePopup={handleTogglePopup}/>, document.body)}
         </div>
     );
 };

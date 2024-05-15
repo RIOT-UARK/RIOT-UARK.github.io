@@ -63,7 +63,7 @@ const Home = () => {
             <div>
                 <h1>Meeting Times & Important Dates</h1>
                 <center>
-                    <h3>Main Meetings @ ELEG Lounge Sundays at 2:00pm</h3>
+                    <h3>Meetings @ ELEG Lounge Sundays at 2:00pm</h3>
                     <h3>X/X/2024: Microbots Competition</h3>
                 </center>
             </div>
