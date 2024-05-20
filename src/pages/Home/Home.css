@@ -1,0 +1,70 @@
+.socialMediaContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.socialMediaLink {
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.socialMediaText {
+    font-size: 16px;
+    margin: 0;
+}
+
+.logoBanner {
+    background-color: var(--navy);
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.logoBanner h1 {
+    color: var(--white);
+}
+
+#bannerLogo {
+    width: 200px;
+}
+
+#DiscordWidget {
+    margin: auto;
+    float: right;
+}
+
+#AboutUs {
+    width: calc(100% - 374.73px);
+    min-height: 500px;
+}
+
+#Projects {
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsorship {
+    margin-top: 50px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.sponsorimgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.sponsor {
+    max-width: 100%;
+    width: auto;
+    height: 100px;
+    margin: 20px;
+}

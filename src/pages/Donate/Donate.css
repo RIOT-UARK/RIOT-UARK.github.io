@@ -1,0 +1,21 @@
+#DonateButton {
+    background-color: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: center;
+    width: 450px;
+    resize: horizontal;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+#DonateButton:hover {
+    box-shadow:
+        0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

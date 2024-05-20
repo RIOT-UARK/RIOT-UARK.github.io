@@ -13,9 +13,7 @@
 
 .boardMemberPortrait {
     width: auto;
-    height: auto;
-    width: 260px;
-    height: 300px;
+    height: 250px;
     border-radius: 10px;
     box-shadow: var(--reallyLightShadow);
 }

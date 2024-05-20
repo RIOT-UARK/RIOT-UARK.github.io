@@ -2,16 +2,16 @@
     box-shadow: var(--lightShadow);
     width: 150px;
     height: 100px;
+    border-radius: 10px;
     float: center;
     margin: 3%;
     text-align: center;
     padding: 10px 40px 0px 40px;
+    display: grid;
+    justify-content: space-evenly;
 }
 
-.battlebotSeasonCardContainer {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: space-evenly;
-    margin-left: -20px;
-    margin-right: -20px;
+.battlebotSeasonCard:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }

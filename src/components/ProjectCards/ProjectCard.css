@@ -7,3 +7,7 @@
     width: 301.6px;
     float: left;
 }
+.projectCard:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

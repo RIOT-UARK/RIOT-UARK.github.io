@@ -1,0 +1,38 @@
+.boardMemberCardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.MeetTheTeam {
+    margin-top: 50px;
+}
+
+#leadership,
+#teamLeads,
+#otherMembers {
+    padding-bottom: 75px;
+}
+
+.leaderCardContainer {
+    display: grid;
+    justify-content: space-evenly;
+}
+
+/*Team lead cards*/
+
+.teamLeadCardContainer {
+    display: grid;
+    justify-content: space-evenly;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+/*Member cards*/
+
+.memberCardContainer {
+    display: grid;
+    justify-content: space-evenly;
+    margin-left: -20px;
+    margin-right: -20px;
+}

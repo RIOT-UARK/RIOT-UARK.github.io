@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from '../ModalContent/ModalContent';
 
+import './battlebotNextSeasonCard.css';
+
 const BattlebotNextSeasonCard = ({ nextTime }) => {
     for (let i = 0; i <= nextTime.length; i++) {
         return (

@@ -1,7 +1,9 @@
 .battlebotCard {
     box-shadow: var(--lightShadow);
+    background-color: var(--background-color);
     width: 300px;
     height: 125px;
+    border-radius: 10px;
     padding: 5px 20px 0px 20px;
     margin: 3%;
     text-align: center;

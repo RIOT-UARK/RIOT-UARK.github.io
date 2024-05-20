@@ -3,14 +3,14 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 //Project not owned by DreamBerd 3
 
 // pages
-import Home from './pages/Home';
-import Microbots from './pages/Microbots';
-import Projects from './pages/Projects';
-import MeetTheTeam from './pages/MeetTheTeam';
-import Donate from './pages/Donate';
-import Shop from './pages/Shop';
-import Placeholder from './pages/Placeholder';
-import PageNotFound from './pages/PageNotFound';
+import Home from './pages/Home/Home';
+import Microbots from './pages//Microbots/Microbots';
+import Projects from './pages/Projects/Projects';
+import MeetTheTeam from './pages/MeetTheTeam/MeetTheTeam';
+import Donate from './pages/Donate/Donate';
+import Shop from './pages/Shop/Shop';
+import Placeholder from './pages/Placeholder/Placeholder';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 import RootLayout from './layouts/RootLayout';
 
 const router = createBrowserRouter(

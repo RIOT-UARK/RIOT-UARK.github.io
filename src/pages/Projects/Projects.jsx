@@ -1,8 +1,9 @@
-import { fetchProjects } from '../utils/fetchProjects';
+import { fetchProjects } from '../../utils/fetchProjects';
 import { useEffect, useState } from 'react';
 
-import ProjectCard from '../components/ProjectCards/ProjectCard';
+import ProjectCard from '../../components/ProjectCards/ProjectCard';
 
+import './Projects.css';
 const Projects = () => {
     const [projects, setProjects] = useState(null);
     const [openModalId, setOpenModalId] = useState(null); // State to track open modal ID
@@ -29,10 +30,10 @@ const Projects = () => {
             <div className="textBlurb">
                 <h1>Projects</h1>
                 <p>
-                    RIOT is the home to many creative projects that have been and are actively developed.
-                    This page acts as a hub for showing what projects are currently being developed and what
-                    projects have already been completed. We give all files/resources developed, with the permission of
-                    the designers, to the public through this website.
+                    RIOT is the home to many creative projects that have been and are actively developed. This page acts
+                    as a hub for showing what projects are currently being developed and what projects have already been
+                    completed. We give all files/resources developed, with the permission of the designers, to the
+                    public through this website.
                 </p>
             </div>
             {currentProjects && (

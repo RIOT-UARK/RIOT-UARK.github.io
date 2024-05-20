@@ -1,6 +1,7 @@
-import ProjectCarousel from '../components/projectCarousel/projectCarousel';
-import LogoSpin from '../components/logoSpin/logoSpin';
-import linkedinFeed from '../components/linkedinFeed/linkedinFeed';
+import ProjectCarousel from '../../components/projectCarousel/projectCarousel';
+import LogoSpin from '../../components/logoSpin/logoSpin';
+import linkedinFeed from '../../components/linkedinFeed/linkedinFeed';
+import './Home.css';
 
 const Home = () => {
     return (
@@ -28,9 +29,9 @@ const Home = () => {
             <div id="AboutUs">
                 <h1>About Us</h1>
                 <p>
-                    RIOT is an engineering Registered Student Organization and nonprofit organization that
-                    seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
-                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.
+                    RIOT is an engineering Registered Student Organization and nonprofit organization that seeks to
+                    benefit mechatronics through robotics at the scale of campus and our larger community and make
+                    Northwest Arkansas the Robotics and Mechatronics capital of the nation.
                 </p>
                 <iframe
                     src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264"

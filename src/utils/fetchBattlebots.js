@@ -1,7 +1,7 @@
-import supabase from "../config/supabaseClient";
+import supabase from '../config/supabaseClient';
 
-export const fetchBattlebots = async() => {
+export const fetchBattlebots = async () => {
     const { data, error } = await supabase.from('Battlebots').select();
-    if (error) return [{name :error.message}];
+    if (error) return [{ name: error.message }];
     return data;
 };

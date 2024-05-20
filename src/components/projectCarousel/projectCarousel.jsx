@@ -17,9 +17,7 @@ const ProjectCarousel = () => {
         fetchProjectsData();
     }, []);
 
-    const selectedProjects = projects && projects.filter(project =>
-        project.inCarousel
-    );
+    const selectedProjects = projects && projects.filter((project) => project.inCarousel);
 
     const sliderRef = useRef(null);
 
@@ -45,17 +43,17 @@ const ProjectCarousel = () => {
     };
     return (
         <>
-        {selectedProjects && (
-            <div id="carousel-container">
-                <FaAngleLeft size="50px" onClick={prev} id="carousel-button" />
-                <Slider ref={sliderRef} {...settings}>
-                    {selectedProjects.map((project) => (
-                        <CarouselCore key={project.id} project={project}/>
-                    ))}
-                </Slider>
-                <FaAngleRight size="50px" onClick={next} id="carousel-button" />
-            </div>
-        )}
+            {selectedProjects && (
+                <div id="carousel-container">
+                    <FaAngleLeft size="50px" onClick={prev} id="carousel-button" />
+                    <Slider ref={sliderRef} {...settings}>
+                        {selectedProjects.map((project) => (
+                            <CarouselCore key={project.id} project={project} />
+                        ))}
+                    </Slider>
+                    <FaAngleRight size="50px" onClick={next} id="carousel-button" />
+                </div>
+            )}
         </>
     );
 };

@@ -1,4 +1,4 @@
-import './MobileDarkMode.css'
+import './MobileDarkMode.css';
 import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import BattlebotsSeasonPopUp from '../battlebotsPopUp/battlebotsSeasonPopUp';
 
+import './battlebotSeasonCard.css';
 const BattlebotSeasonCard = ({ semester, isOpen, onTogglePopup }) => {
-    
     const [showPopup, setShowPopup] = useState(isOpen);
 
     useEffect(() => {
@@ -38,11 +38,19 @@ const BattlebotSeasonCard = ({ semester, isOpen, onTogglePopup }) => {
     };
 
     return (
-        <div onClick = {handleCardClick}>
+        <div onClick={handleCardClick}>
             <div className="battlebotSeasonCard">
                 <h3>{semester}</h3>
             </div>
-            {showPopup && createPortal(<BattlebotsSeasonPopUp currSemester={semester} onClose={handlePopupClose} onTogglePopup={handleTogglePopup}/>, document.body)}
+            {showPopup &&
+                createPortal(
+                    <BattlebotsSeasonPopUp
+                        currSemester={semester}
+                        onClose={handlePopupClose}
+                        onTogglePopup={handleTogglePopup}
+                    />,
+                    document.body
+                )}
         </div>
     );
 };

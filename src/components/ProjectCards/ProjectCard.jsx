@@ -1,4 +1,4 @@
-import './ProjectCard.css'
+import './ProjectCard.css';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from '../ModalContent/ModalContent';

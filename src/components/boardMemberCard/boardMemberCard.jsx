@@ -1,4 +1,4 @@
-import './boardMemberCard.css'
+import './boardMemberCard.css';
 const BoardMemberCard = ({ boardMember }) => {
     if (boardMember.active === true) {
         return (
@@ -8,7 +8,9 @@ const BoardMemberCard = ({ boardMember }) => {
                     src={boardMember.image_url}
                     alt={(boardMember.firstName, boardMember.lastName)}
                 />
-                <h3>{boardMember.firstName} {boardMember.lastName}</h3>
+                <h3>
+                    {boardMember.firstName} {boardMember.lastName}
+                </h3>
                 <div className="boardMemberTitleContainer">
                     <h4 className="boardMemberTitle">{boardMember.externalTitle}</h4>
                 </div>
