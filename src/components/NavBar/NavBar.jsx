@@ -1,3 +1,4 @@
+import './NavBar.css';
 import React from 'react';
 import DarkModeToggle from '../darkMode/darkMode';
 import { NavLink } from 'react-router-dom';

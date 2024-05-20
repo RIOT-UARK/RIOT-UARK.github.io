@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { fetchBattlebots } from '../db/db';
+import { fetchBattlebots } from '../../utils/fetchBattlebots';
 
-import BattlebotCard from '../components/battlebotCard/battlebotCard';
-import BattlebotSeasonCard from '../components/battlebotSeasonCard/battlebotSeasonCard';
+import BattlebotCard from '../../components/battlebotCard/battlebotCard';
+import BattlebotSeasonCard from '../../components/battlebotSeasonCard/battlebotSeasonCard';
 
+import './Microbots.css';
 function ToggleSignup({ offSeason, formLink }) {
     if (offSeason) {
         return <h2 id="SignUpUnavailable">SIGN-UP AVAILABLE FALL 2024</h2>;
@@ -54,13 +55,13 @@ const Microbots = () => {
                     As part of RIOT's vision, every year, we host a microbots competition where students new to robotics
                     pilot small robots in a variety of different competitive events. We've hosted each previous semester
                     two separate battle bot tournaments where students build a plastic, 3D printed, remote-controlled
-                    battlebot in a competition to fight and survive against other designs. Our winners receive
-                    special awards such as the crowned champion of the microbots tournament each time a competition is
-                    hosted. Each fall semester we host an internal competition where we set the fight in the University
-                    of Arkansas Student Union to recruit additional interested students into the fold
-                    of our organization. In the spring, we host a community event at the Fayetteville Public Library,
-                    where students demonstrate their designs in front of a live audience and compete for trophies like the
-                    trophies of champion, best design, crowd favorite, and best driver.
+                    battlebot in a competition to fight and survive against other designs. Our winners receive special
+                    awards such as the crowned champion of the microbots tournament each time a competition is hosted.
+                    Each fall semester we host an internal competition where we set the fight in the University of
+                    Arkansas Student Union to recruit additional interested students into the fold of our organization.
+                    In the spring, we host a community event at the Fayetteville Public Library, where students
+                    demonstrate their designs in front of a live audience and compete for trophies like the trophies of
+                    champion, best design, crowd favorite, and best driver.
                 </p>
             </div>
             <center>
@@ -88,10 +89,7 @@ const Microbots = () => {
                     {currentSeasonBots && currentSeasonBots.length > 0 ? (
                         <div className="battlebotThisSeasonCardContainer">
                             {currentSeasonBots.map((battlebot) => (
-                                <BattlebotCard
-                                    key={battlebot.id}
-                                    battlebot={battlebot}
-                                />
+                                <BattlebotCard key={battlebot.id} battlebot={battlebot} />
                             ))}
                         </div>
                     ) : (
@@ -104,7 +102,7 @@ const Microbots = () => {
                 <h1>Previous Seasons</h1>
                 <center>
                     <div className="battlebotSeasonCardContainer">
-                        {prevSemesters && (
+                        {prevSemesters &&
                             prevSemesters.map((semester) => (
                                 <BattlebotSeasonCard
                                     key={semester}
@@ -112,8 +110,7 @@ const Microbots = () => {
                                     isOpen={openPopupId === semester} // Pass isOpen prop
                                     onTogglePopup={handleTogglePopup} // Pass onTogglePopup function
                                 />
-                            ))
-                        )}
+                            ))}
                     </div>
                 </center>
             </div>

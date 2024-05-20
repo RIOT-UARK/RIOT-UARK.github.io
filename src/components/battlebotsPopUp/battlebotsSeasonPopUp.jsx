@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import { fetchBattlebots } from '../../db/db';
+import { fetchBattlebots } from '../../utils/fetchBattlebots';
 import CloseButton from '../closeButton/CloseButton';
 import BattlebotCard from '../battlebotCard/battlebotCard';
+
+import './battlebotsSeasonPopUp.css';
 
 export default function BattlebotsSeasonPopUp({ currSemester, onClose, isOpen, onTogglePopup }) {
     const [battlebots, setBattlebots] = useState(null);

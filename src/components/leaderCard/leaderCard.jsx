@@ -1,3 +1,4 @@
+import './leaderCard.css';
 import { useEffect, useState } from 'react';
 import { FaUser, FaUserAstronaut } from 'react-icons/fa';
 
@@ -17,9 +18,7 @@ const LeaderCard = ({ member }) => {
                             <FaUserAstronaut size={250} color={'#1c3d6e'} />
                         ) : (
                             <FaUser size={250} color={'#1c3d6e'} />
-                        )
-
-                        }
+                        )}
                     </div>
                     <h3>
                         {member.first_name} {member.last_name}

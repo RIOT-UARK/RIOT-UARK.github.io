@@ -1,0 +1,13 @@
+.teamLeadCard {
+    box-shadow: var(--heavyShadow);
+    border-radius: 15px;
+    width: 300px;
+    height: 160px;
+    margin: 3%;
+    text-align: center;
+    padding: 10px 20px 0px 20px;
+}
+.cardTitle {
+    color: var(--navy);
+    font-size: 18px;
+}

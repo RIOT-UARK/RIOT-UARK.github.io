@@ -1,13 +1,16 @@
+import './boardMemberCard.css';
 const BoardMemberCard = ({ boardMember }) => {
     if (boardMember.active === true) {
         return (
             <div className="boardMemberCard">
                 <img
-                    class="boardMemberPortrait"
+                    className="boardMemberPortrait"
                     src={boardMember.image_url}
                     alt={(boardMember.firstName, boardMember.lastName)}
                 />
-                <h3>{boardMember.firstName} {boardMember.lastName}</h3>
+                <h3>
+                    {boardMember.firstName} {boardMember.lastName}
+                </h3>
                 <div className="boardMemberTitleContainer">
                     <h4 className="boardMemberTitle">{boardMember.externalTitle}</h4>
                 </div>

@@ -1,4 +1,4 @@
-import CloseButton from "../closeButton/CloseButton";
+import CloseButton from '../closeButton/CloseButton';
 
 export default function ModalContent({ project, onClose }) {
     const handleModalClick = (event) => {

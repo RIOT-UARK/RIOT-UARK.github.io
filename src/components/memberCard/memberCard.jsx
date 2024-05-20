@@ -1,3 +1,4 @@
+import './memberCard.css';
 const memberCard = ({ member }) => {
     if (member.position === 'member' && member.team_lead === 'none') {
         return (

@@ -1,3 +1,4 @@
+import './teamLeadCard.css';
 const teamLeadCard = ({ member }) => {
     if (member.team_lead !== null) {
         return (

@@ -1,3 +1,4 @@
+import './Donate.css';
 const Donate = () => {
     return (
         <div className="page donate">

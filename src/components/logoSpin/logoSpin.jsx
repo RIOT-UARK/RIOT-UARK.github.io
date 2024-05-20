@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './logoSpin.css';
 
 const LogoSpin = () => {
     const [rotationAngle, setRotationAngle] = useState(0);

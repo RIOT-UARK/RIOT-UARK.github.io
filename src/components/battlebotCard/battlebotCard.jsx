@@ -1,3 +1,5 @@
+import './battlebotCard.css';
+
 const BattlebotCard = ({ battlebot }) => {
     return (
         <div className="battlebotCard">
