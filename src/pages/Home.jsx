@@ -1,31 +1,8 @@
-import supabase from '../config/supabaseClient';
-import { useEffect, useState } from 'react';
-
-import images from '../components/projectCarousel/images';
 import ProjectCarousel from '../components/projectCarousel/projectCarousel';
 import LogoSpin from '../components/logoSpin/logoSpin';
 import linkedinFeed from '../components/linkedinFeed/linkedinFeed';
 
 const Home = () => {
-    const [fetchError, setFetchError] = useState(null);
-    const [Projects, setProjects] = useState(null);
-    useEffect(() => {
-        const fetchProjects = async () => {
-            const { data, error } = await supabase.from('Projects').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch data');
-                console.log(error);
-                setProjects(null);
-            }
-            if (data) {
-                setProjects(data);
-                setFetchError(null);
-            }
-        };
-        fetchProjects();
-    }, []);
-
     return (
         <div className="page home">
             <div className="logoBanner">
@@ -51,9 +28,9 @@ const Home = () => {
             <div id="AboutUs">
                 <h1>About Us</h1>
                 <p>
-                    RIOT is an engineering Registered Student Organization, soon to be nonprofit organization, that
+                    RIOT is an engineering Registered Student Organization and nonprofit organization that
                     seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
-                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
+                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.
                 </p>
                 <iframe
                     src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264"
@@ -65,12 +42,9 @@ const Home = () => {
 
             <center id="Projects">
                 <h1>Projects</h1>
-                {fetchError && <p>{fetchError}</p>}
-                {Projects && (
-                    <div className="slideshow-container fade">
-                        <ProjectCarousel images={images} />
-                    </div>
-                )}
+                <div className="slideshow-container fade">
+                    <ProjectCarousel />
+                </div>
             </center>
 
             <div className="sponsorship">
@@ -89,9 +63,8 @@ const Home = () => {
             <div>
                 <h1>Meeting Times & Important Dates</h1>
                 <center>
-                    <h3>Workshop meetings @ ELEG Lounge 2:00pm</h3>
-                    <h3>Main Meetings @ ELEG Lounge 2:00pm</h3>
-                    <h3>11/16/23: Microbots Competition @ Union Flag Room 8:00am</h3>
+                    <h3>Meetings @ ELEG Lounge Sundays at 2:00pm</h3>
+                    <h3>X/X/2024: Microbots Competition</h3>
                 </center>
             </div>
         </div>

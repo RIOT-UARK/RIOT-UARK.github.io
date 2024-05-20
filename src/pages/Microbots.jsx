@@ -1,17 +1,12 @@
-import supabase from '../config/supabaseClient';
 import { useEffect, useState } from 'react';
+import { fetchBattlebots } from '../db/db';
 
 import BattlebotCard from '../components/battlebotCard/battlebotCard';
-
-function GetEmail({ email, position }) {
-    if (position === 'President') {
-        return <p>Contact our president at {email}</p>;
-    }
-}
+import BattlebotSeasonCard from '../components/battlebotSeasonCard/battlebotSeasonCard';
 
 function ToggleSignup({ offSeason, formLink }) {
     if (offSeason) {
-        return <h2 id="SignUpUnavailable">SIGN-UP UNAVAILABLE</h2>;
+        return <h2 id="SignUpUnavailable">SIGN-UP AVAILABLE FALL 2024</h2>;
     } else {
         return (
             <h2>
@@ -23,84 +18,33 @@ function ToggleSignup({ offSeason, formLink }) {
     }
 }
 
-function ThisSeason({ Battlebots, currentSemester }) {
-    /* {fetchError && (<p>{fetchError}</p>)}
-	{Battlebots && (
-		if(currentSemester != "Spring 2023") {
-			return(
-				<p>No competitors have signed up yet. Stay tuned!</p>
-			);
-		}
-		else {
-			return(
-				<div className = "battlebotCardContainer">
-					{Battlebots.map(battlebot => (
-						<BattlebotCard key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester}/>
-					))}
-				</div>
-			);
-		}
-	)} */
-}
-
-function PrevSemesterButtons() {
-    const prevSemesters = ['Fall 2022', 'Spring 2023'];
-
-    const list = prevSemesters.map((semester) => (
-        <div key={semester}>
-            <div className="battlebotSeasonCard">
-                <h3>{semester}</h3>
-            </div>
-        </div>
-    ));
-
-    return <>{list}</>;
-}
-
 const Microbots = () => {
-    const [fetchError, setFetchError] = useState(null);
     const [Battlebots, setBattlebots] = useState(null);
-    const [Members, setMembers] = useState([]);
+    const [openPopupId, setOpenPopupId] = useState(null); // State to track open popup ID
+    const prevSemesters = ['Fall 2022', 'Spring 2023']; //Temporary hardcoded array. Add Fall 2023 when we get the list of bots that competed
 
     ////////////////////////////////////////////////////
     //Manually change these as needed
-    //Can't think of a good way to do it automatically
-    const currentSemester = 'Fall 2023';
+    //Can't think of a good way to do it automatically. Maybe config page in future?
+    const currentSemester = 'Spring 2024';
     const offSeason = true;
-    const formLink = 'https://www.youtube.com/@Ayden3D';
+    const formLink = 'https://www.youtube.com/@Ayden3D'; //Placeholder link, subscribe to Ayden though
     ////////////////////////////////////////////////////
 
+    const currentSeasonBots = Battlebots && Battlebots.filter((battlebot) => battlebot.semester == currentSemester);
+
     useEffect(() => {
-        const fetchBattlebots = async () => {
-            const { data, error } = await supabase.from('Battlebots').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch battlebot data');
-                console.log(error);
-                setBattlebots(null);
-            }
-            if (data) {
-                setBattlebots(data);
-                setFetchError(null);
-            }
+        const fetchBattlebotsData = async () => {
+            const battlebots = await fetchBattlebots();
+            setBattlebots(battlebots);
         };
-        fetchBattlebots();
-
-        const fetchMembers = async () => {
-            const { data, error } = await supabase.from('Members').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch member data');
-                console.log(error);
-                setMembers(null);
-            }
-            if (data) {
-                setMembers(data);
-                setFetchError(null);
-            }
-        };
-        fetchMembers();
+        fetchBattlebotsData();
     }, []);
+
+    // Function to toggle popup state and set open popup ID
+    const handleTogglePopup = (semester) => {
+        setOpenPopupId(openPopupId === semester ? null : semester);
+    };
 
     return (
         <div className="page microbots">
@@ -108,14 +52,14 @@ const Microbots = () => {
                 <h1>Microbots</h1>
                 <p>
                     As part of RIOT's vision, every year, we host a microbots competition where students new to robotics
-                    pilot small robots in a variety of different competitive events. We’ve hosted each previous semester
-                    two separate battle bot tournaments where students build a plastic, 3D printed, remote controlled
-                    battle bot in a competition to fight and survive against another designs. Our winners receive
-                    special awards as the crowned champion of the microbots tournament each time a competition is
+                    pilot small robots in a variety of different competitive events. We've hosted each previous semester
+                    two separate battle bot tournaments where students build a plastic, 3D printed, remote-controlled
+                    battlebot in a competition to fight and survive against other designs. Our winners receive
+                    special awards such as the crowned champion of the microbots tournament each time a competition is
                     hosted. Each fall semester we host an internal competition where we set the fight in the University
-                    of Arkansas Union for the student division to recruit additional interested students into the fold
-                    of our organization. In the spring, we host a community event at the Fayetteville public library,
-                    where students demonstrate their designs in front of a live audience and compete for trophies the
+                    of Arkansas Student Union to recruit additional interested students into the fold
+                    of our organization. In the spring, we host a community event at the Fayetteville Public Library,
+                    where students demonstrate their designs in front of a live audience and compete for trophies like the
                     trophies of champion, best design, crowd favorite, and best driver.
                 </p>
             </div>
@@ -133,41 +77,46 @@ const Microbots = () => {
             </div>
             <center>
                 <div>
-                    <h2>How to Support</h2>
-                    <p>
-                        To support the microbots competition, or fund a specific student's robot, please contact us at
-                        robotics@uark.edu
-                    </p>
-                </div>
-                <div>
-                    <h2>Questions?</h2>
-                    {fetchError && <p>{fetchError}</p>}
-                    {Members.map((member) => (
-                        <GetEmail key={member.id} email={member.email} position={member.position} />
-                    ))}
+                    <h2>Want to support us or have questions?</h2>
+                    <p>Please contact robotics@uark.edu</p>
                 </div>
             </center>
 
-            <div>
+            <div id="thisSemester">
+                <h1>This Season</h1>
                 <center>
-                    {/* <h1>This Season</h1> */}
-                    {/* <ThisSeason key={Battlebots.id} Battlebots={Battlebots} currentSemester={currentSemester}/> */}
-                    {/* {fetchError && (<p>{fetchError}</p>)}
-				{Battlebots && (
-					<div className = "battlebotCardContainer">
-						{Battlebots.map(battlebot => (
-							<ThisSeason key={battlebot.id} battlebot={battlebot} currentSemester={currentSemester}/>
-						))}
-					</div>
-				)} */}
+                    {currentSeasonBots && currentSeasonBots.length > 0 ? (
+                        <div className="battlebotThisSeasonCardContainer">
+                            {currentSeasonBots.map((battlebot) => (
+                                <BattlebotCard
+                                    key={battlebot.id}
+                                    battlebot={battlebot}
+                                />
+                            ))}
+                        </div>
+                    ) : (
+                        <p id="nextSemesterBlurb">RIOT will be back next semester hosting battlebots. Stay tuned!</p>
+                    )}
                 </center>
             </div>
-            {/* <div id = "prevSemesters">
-				<h1>Previous Seasons</h1>
-				<div className = "battlebotSeasonCardContainer">
-					<PrevSemesterButtons/>
-				</div>
-			</div> */}
+
+            <div id="prevSemesters">
+                <h1>Previous Seasons</h1>
+                <center>
+                    <div className="battlebotSeasonCardContainer">
+                        {prevSemesters && (
+                            prevSemesters.map((semester) => (
+                                <BattlebotSeasonCard
+                                    key={semester}
+                                    semester={semester}
+                                    isOpen={openPopupId === semester} // Pass isOpen prop
+                                    onTogglePopup={handleTogglePopup} // Pass onTogglePopup function
+                                />
+                            ))
+                        )}
+                    </div>
+                </center>
+            </div>
         </div>
     );
 };

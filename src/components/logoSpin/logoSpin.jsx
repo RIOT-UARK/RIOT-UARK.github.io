@@ -16,7 +16,7 @@ const LogoSpin = () => {
                 alt="RIOT Logo"
                 style={{ transform: `rotate(${rotationAngle}deg)` }}
                 onClick={rotateImage}
-            ></img>
+            />
         </div>
     );
 };

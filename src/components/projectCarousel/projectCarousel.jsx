@@ -1,10 +1,26 @@
 import React, { useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchProjects } from '../../db/db';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import CarouselCore from './CarouselCore';
 
-const ProjectCarousel = ({ images }) => {
+const ProjectCarousel = () => {
+    const [projects, setProjects] = useState(null);
+    useEffect(() => {
+        const fetchProjectsData = async () => {
+            const projects = await fetchProjects();
+            setProjects(projects);
+        };
+        fetchProjectsData();
+    }, []);
+
+    const selectedProjects = projects && projects.filter(project =>
+        project.inCarousel
+    );
+
     const sliderRef = useRef(null);
 
     const settings = {
@@ -27,20 +43,20 @@ const ProjectCarousel = ({ images }) => {
     const prev = () => {
         sliderRef.current.slickPrev();
     };
-
     return (
-        <div id="carousel-container">
-            <FaAngleLeft size="50px" onClick={prev} id="carousel-button" />
-            <Slider ref={sliderRef} {...settings}>
-                {images.map((image) => (
-                    <div id="carouselContent" key={image.id}>
-                        <img src={image.src} alt={image.alt} />
-                        <p>{image.projectDesc}</p>
-                    </div>
-                ))}
-            </Slider>
-            <FaAngleRight size="50px" onClick={next} id="carousel-button" />
-        </div>
+        <>
+        {selectedProjects && (
+            <div id="carousel-container">
+                <FaAngleLeft size="50px" onClick={prev} id="carousel-button" />
+                <Slider ref={sliderRef} {...settings}>
+                    {selectedProjects.map((project) => (
+                        <CarouselCore key={project.id} project={project}/>
+                    ))}
+                </Slider>
+                <FaAngleRight size="50px" onClick={next} id="carousel-button" />
+            </div>
+        )}
+        </>
     );
 };
 

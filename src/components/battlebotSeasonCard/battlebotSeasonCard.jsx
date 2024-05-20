@@ -1,15 +1,50 @@
-const BattlebotSeasonCard = ({ prevSemesters }) => {
-    for (let i = 0; i <= prevSemesters.length; i++) {
-        return (
-            <div className="battlebotSeasonCardContainer">
-                <div className="battlebotSeasonCard">
-                    <div className="container">
-                        <h3>{prevSemesters[i]}</h3>
-                    </div>
-                </div>
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import BattlebotsSeasonPopUp from '../battlebotsPopUp/battlebotsSeasonPopUp';
+
+const BattlebotSeasonCard = ({ semester, isOpen, onTogglePopup }) => {
+    
+    const [showPopup, setShowPopup] = useState(isOpen);
+
+    useEffect(() => {
+        setShowPopup(isOpen);
+    }, [isOpen]);
+
+    const handleTogglePopup = () => {
+        setShowPopup(!showPopup);
+        onTogglePopup(semester);
+    };
+
+    const handlePopupClose = () => {
+        setShowPopup(false);
+    };
+
+    useEffect(() => {
+        const handleClickOutsidePopup = (event) => {
+            if (showPopup && event.target.closest('.popup') === null) {
+                handlePopupClose();
+            }
+        };
+
+        document.addEventListener('click', handleClickOutsidePopup);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutsidePopup);
+        };
+    }, [showPopup]);
+
+    const handleCardClick = () => {
+        onTogglePopup(semester);
+    };
+
+    return (
+        <div onClick = {handleCardClick}>
+            <div className="battlebotSeasonCard">
+                <h3>{semester}</h3>
             </div>
-        );
-    }
+            {showPopup && createPortal(<BattlebotsSeasonPopUp currSemester={semester} onClose={handlePopupClose} onTogglePopup={handleTogglePopup}/>, document.body)}
+        </div>
+    );
 };
 
 export default BattlebotSeasonCard;

@@ -1,65 +1,70 @@
-import supabase from '../config/supabaseClient';
+import { fetchProjects } from '../db/db';
 import { useEffect, useState } from 'react';
 
-import PortalExample from '../components/PortalExample/PortalExample';
-//import ProjectCard from "../components/ProjectCard"
-import OldProjectCard from '../components/OldProjectCard/OldProjectCard';
+import ProjectCard from '../components/ProjectCards/ProjectCard';
 
 const Projects = () => {
-    const [fetchError, setFetchError] = useState(null);
-    const [Projects, setProjects] = useState(null);
+    const [projects, setProjects] = useState(null);
+    const [openModalId, setOpenModalId] = useState(null); // State to track open modal ID
 
     useEffect(() => {
-        const fetchProjects = async () => {
-            const { data, error } = await supabase.from('Projects').select();
-
-            if (error) {
-                setFetchError('Error: failed to fetch data');
-                console.log(error);
-                setProjects(null);
-            }
-            if (data) {
-                setProjects(data);
-                setFetchError(null);
-            }
+        const fetchProjectsData = async () => {
+            const projects = await fetchProjects();
+            setProjects(projects);
         };
-        fetchProjects();
+        fetchProjectsData();
     }, []);
+
+    // Function to toggle modal state and set open modal ID
+    const handleToggleModal = (projectId) => {
+        setOpenModalId(openModalId === projectId ? null : projectId);
+    };
+
+    // Filter current and previous projects
+    const currentProjects = projects && projects.filter((project) => project.yearFinished === -1);
+    const prevProjects = projects && projects.filter((project) => project.yearFinished !== -1);
 
     return (
         <div className="page projects">
             <div className="textBlurb">
                 <h1>Projects</h1>
                 <p>
-                    RIOT is the home to many creative projects that have been developed and that are actively developed.
-                    This website acts as a hub point for denoting what projects are currently being developed, and what
+                    RIOT is the home to many creative projects that have been and are actively developed.
+                    This page acts as a hub for showing what projects are currently being developed and what
                     projects have already been completed. We give all files/resources developed, with the permission of
                     the designers, to the public through this website.
                 </p>
             </div>
-            <div id="currentProjects">
-                <h1>Current Projects</h1>
-                {fetchError && <p>{fetchError}</p>}
-                {Projects && (
+            {currentProjects && (
+                <div id="currentProjects">
+                    <h1>Current Projects</h1>
                     <div className="projectCardContainer">
-                        {Projects.map((project) => (
-                            <PortalExample key={project.id} project={project} />
+                        {currentProjects.map((project) => (
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                isOpen={openModalId === project.id} // Pass isOpen prop
+                                onToggleModal={handleToggleModal} // Pass onToggleModal function
+                            />
                         ))}
                     </div>
-                )}
-            </div>
-
-            <div id="oldProjects">
-                <h1>Previous Projects</h1>
-                {fetchError && <p>{fetchError}</p>}
-                {Projects && (
+                </div>
+            )}
+            {prevProjects && (
+                <div id="oldProjects">
+                    <h1>Previous Projects</h1>
                     <div className="projectCardContainer">
-                        {Projects.map((project) => (
-                            <OldProjectCard key={project.id} project={project} />
+                        {prevProjects.map((project) => (
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                isOpen={openModalId === project.id} // Pass isOpen prop
+                                onToggleModal={handleToggleModal} // Pass onToggleModal function
+                            />
                         ))}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

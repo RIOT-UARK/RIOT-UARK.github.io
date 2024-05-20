@@ -1,13 +1,14 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 
+//Project not owned by DreamBerd 3
+
 // pages
 import Home from './pages/Home';
 import Microbots from './pages/Microbots';
 import Projects from './pages/Projects';
-import Documentation from './pages/Documentation';
 import MeetTheTeam from './pages/MeetTheTeam';
-import GettingStarted from './pages/GettingStarted';
 import Donate from './pages/Donate';
+import Shop from './pages/Shop';
 import Placeholder from './pages/Placeholder';
 import PageNotFound from './pages/PageNotFound';
 import RootLayout from './layouts/RootLayout';
@@ -17,11 +18,10 @@ const router = createBrowserRouter(
         <Route path="" element={<RootLayout />}>
             <Route index element={<Home />} />,
             <Route path="/Microbots" element={<Microbots />} />,
-            <Route path="/Projects" element={<Placeholder />} />,
-            <Route path="/Documentation" element={<Placeholder />} />,
+            <Route path="/Projects" element={<Projects />} />,
             <Route path="/MeetTheTeam" element={<MeetTheTeam />} />,
             <Route path="/Donate" element={<Placeholder />} />,
-            <Route path="/GettingStarted" element={<Placeholder />} />,
+            <Route path="/Shop" element={<Placeholder />} />,
             <Route path="/Placeholder" element={<Placeholder />} />,
             <Route path="/*" element={<PageNotFound />} />
         </Route>
