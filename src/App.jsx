@@ -21,7 +21,7 @@ const router = createBrowserRouter(
             <Route path="/Projects" element={<Projects />} />,
             <Route path="/MeetTheTeam" element={<MeetTheTeam />} />,
             <Route path="/Donate" element={<Placeholder />} />,
-            <Route path="/Shop" element={<Shop />} />,
+            <Route path="/Shop" element={<Placeholder />} />,
             <Route path="/Placeholder" element={<Placeholder />} />,
             <Route path="/*" element={<PageNotFound />} />
         </Route>

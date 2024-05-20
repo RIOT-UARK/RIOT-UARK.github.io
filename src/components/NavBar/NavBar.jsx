@@ -18,12 +18,12 @@ const NavBar = () => {
             <NavLink to="/MeetTheTeam" className={({ isActive }) => (isActive ? 'active' : '')}>
                 Meet the Team
             </NavLink>
-            <NavLink to="/Donate" className={({ isActive }) => (isActive ? 'active' : '')}>
+            {/* <NavLink to="/Donate" className={({ isActive }) => (isActive ? 'active' : '')}>
                 Donate
             </NavLink>
             <NavLink to="/Shop" className={({ isActive }) => (isActive ? 'active' : '')}>
                 Shop
-            </NavLink>
+            </NavLink> */}
             <DarkModeToggle />
         </nav>
     );

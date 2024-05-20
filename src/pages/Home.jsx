@@ -28,9 +28,9 @@ const Home = () => {
             <div id="AboutUs">
                 <h1>About Us</h1>
                 <p>
-                    RIOT is an engineering Registered Student Organization, soon to be nonprofit organization, that
+                    RIOT is an engineering Registered Student Organization and nonprofit organization that
                     seeks to benefit mechatronics through robotics at the scale of campus and our larger community and
-                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.{' '}
+                    make Northwest Arkansas the Robotics and Mechatronics capital of the nation.
                 </p>
                 <iframe
                     src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/190264"
@@ -63,7 +63,7 @@ const Home = () => {
             <div>
                 <h1>Meeting Times & Important Dates</h1>
                 <center>
-                    <h3>Main Meetings @ ELEG Lounge Sundays at 2:00pm</h3>
+                    <h3>Meetings @ ELEG Lounge Sundays at 2:00pm</h3>
                     <h3>X/X/2024: Microbots Competition</h3>
                 </center>
             </div>

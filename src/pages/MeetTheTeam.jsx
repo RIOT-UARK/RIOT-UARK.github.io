@@ -25,7 +25,6 @@ const MeetTheTeam = () => {
         <div className="page MeetTheTeam">
             <div className='textBlurb'>
                 <h1>Meet The Board</h1>
-                <p>There will be text here mayhaps</p>
             </div>
             <div id="boardMemberContainer">
                 {boardMembers ? (
@@ -39,8 +38,8 @@ const MeetTheTeam = () => {
             <div className="textBlurb">
                 <h1>Meet the Team</h1>
                 <p>
-                    RIOT is consisted of students who founded the registered student org. turned non profit in 2023. The
-                    founder, Benjamin Burdess started the club in spring of 2022 during his classes to begin working
+                    RIOT is made up of students who founded the registered student organization-turned-nonprofit in 2022. The
+                    founder, Benjamin Burdess, started the club in the spring 2022 semester to begin working
                     towards a vision of starting a premier robotics club for the University of Arkansas. With Nathaniel
                     House as his founding Vice President and Thalia Frankhouse as RIOT's founding Treasurer, they built
                     the small, single robot driven club to what it is today: The University's largest and best funded

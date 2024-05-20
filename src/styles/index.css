@@ -291,28 +291,6 @@ div.gallery img {
     cursor: pointer;
 }
 
-.moda {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.moda-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
 /* Caption of Modal Image */
 #caption {
     margin: auto;
@@ -326,7 +304,6 @@ div.gallery img {
 }
 
 /* Add Animation */
-.moda-content,
 #caption {
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -342,7 +319,7 @@ div.gallery img {
     }
 }
 /*---------------------------------------*/
-/*----------MEET THE Board CARDS---------*/
+/*----------MEET THE BOARD CARDS---------*/
 /*---------------------------------------*/
 
 .boardMemberCardContainer {
@@ -350,7 +327,6 @@ div.gallery img {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
 
 /*---------------------------------------*/
 /*----------MEET THE TEAM CARDS----------*/
@@ -400,17 +376,87 @@ div.gallery img {
 /*------------BATTLEBOT CARDS------------*/
 /*---------------------------------------*/
 
+.battlebotCard {
+    box-shadow: var(--lightShadow);
+    background-color: var(--background-color);
+    width: 300px;
+    height: 125px;
+    border-radius: 10px;
+    padding: 5px 20px 0px 20px;
+    margin: 3%;
+    text-align: center;
+}
+
+
 .battlebotCardContainer {
     display: grid;
     justify-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    top: 70px;
+    height: var(--modalHeight);
+}
+
+
+.battlebotSeasonCard {
+    box-shadow: var(--lightShadow);
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    float: center;
+    margin: 3%;
+    text-align: center;
+    padding: 10px 40px 0px 40px;
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.battlebotSeasonCard:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.battlebotSeasonCardContainer {
+    display: flex;
+    grid-template-columns: auto;
+    justify-content: space-evenly;
     margin-left: -20px;
     margin-right: -20px;
+}
+
+.battlebotNextSeasonCard {
+    box-shadow: var(--lightShadow);
+    width: 350px;
+    height: 110px;
+    float: center;
+    margin: 3%;
+    text-align: center;
+    padding: 10px 40px 0px 40px;
+}
+
+.battlebotThisSeasonCardContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    margin-left: -20%;
+    margin-right: -20%;
 }
 
 #prevSemesters {
     padding-bottom: 100px;
     margin-left: 20%;
     margin-right: 20%;
+}
+
+#thisSemester {
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#nextSemesterBlurb {
+    float: center;
 }
 
 /*---------------------------------------*/
@@ -445,7 +491,7 @@ div.gallery img {
     /*.teamLeadCardContainer,       Only 3 teams right now*/
     .memberCardContainer,
     .battlebotCardContainer {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
     }
     .teamLeadCardContainer {
         grid-template-columns: auto auto auto;
@@ -483,6 +529,11 @@ div.gallery img {
         grid-template-columns: auto;
     }
     #prevSemesters {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    #nextSemesters {
+        border-radius: 10px;
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -526,18 +577,30 @@ div.gallery img {
         margin-left: 5%;
         margin-right: 5%;
     }
+    #nextSemesters {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
     .sponsorimgs {
         flex-direction: column;
     }
 }
 @media only screen and (max-width: 700px) {
-    .moda-content {
-        width: 100%;
-    }
     .battlebotSeasonCardContainer {
         grid-template-columns: auto auto;
     }
+    .battlebotThisSeasonCardContainer {
+        grid-template-columns: auto auto;
+    }
+
+    .battlebotCardContainer {
+        grid-template-columns: auto;
+    }
     #prevSemesters {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    #nextSemesters {
         margin-left: 20%;
         margin-right: 20%;
     }
@@ -577,6 +640,10 @@ div.gallery img {
         margin-left: 10%;
         margin-right: 10%;
     }
+    #nextSemesters {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     #DiscordWidget {
         width: 100%;
         display: flex;
@@ -599,7 +666,14 @@ div.gallery img {
     .battlebotSeasonCardContainer {
         grid-template-columns: auto;
     }
+    .battlebotThisSeasonCardContainer {
+        grid-template-columns: auto;
+    }
     #prevSemesters {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    #nextSemesters {
         margin-left: 20%;
         margin-right: 20%;
     }
@@ -615,4 +689,45 @@ div.gallery img {
 }
 
 
+.modal {
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background-color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    position: fixed;
+    --modalWidth: 80%;
+    width: var(--modalWidth);
+    --modalHeight: 80%;
+    height: var(--modalHeight);
+    top: 70px;
+    bottom: 300px;
+    left: calc(50% - var(--modalWidth) / 2);
+}
+
+.popup {
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    background-color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    position: fixed;
+    --modalWidth: 80%;
+    width: var(--modalWidth);
+    
+    top: 70px;
+    bottom: 100px;
+    left: calc(50% - var(--modalWidth) / 2);
+}
+
+.closeButton {
+    color: var(--navy);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    float: right;
+}
 
